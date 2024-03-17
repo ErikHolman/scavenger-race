@@ -1,0 +1,30 @@
+.race-overview {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px;
+
+  & .opened-sidebar {
+    display: flex;
+    width: 33%;
+    & .race-sidebar {
+      border-right: 1px solid red;
+      background-color: green !important;
+    }
+  }
+
+  & .closed-sidebar {
+    display: flex;
+    width: min-content;
+    background-color: green;
+    border-right: 1px solid red;
+  }
+
+  & .race {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    justify-content: space-around;
+  }
+}
