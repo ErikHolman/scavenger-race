@@ -1,0 +1,11 @@
+[
+  {
+    "admin": [
+      { "id": 1, "name": "jessica", "password": "hubs" },
+      { "id": 2, "name": "erik", "password": "weefola" }
+    ],
+    "drivers": [],
+    "racers": [],
+    "judges": []
+  }
+]

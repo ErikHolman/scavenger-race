@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Race Demo",
+    "raceDate": "09-05-2024",
+    "raceStart": "1000",
+    "legs": [3, 8, 29, 44],
+    "users": {
+      "drivers": [12, 14, 16664],
+      "racers": [],
+      "judges": []
+    }
+  },
+  {
+    "id": 2,
+    "name": "Race Numero dos",
+    "raceDate": "10-6-2-26",
+    "raceStart": "600",
+    "legs": [2, 86, 13, 405],
+    "users": {
+      "drivers": [14, 19, 122],
+      "racers": [155, 267, 2351, 123],
+      "judges": [164, 2462, 24524]
+    }
+  },
+  {
+    "id": 3,
+    "name": "Race Demo 3",
+    "raceDate": "4-05-2024",
+    "raceStart": "1600",
+    "legs": [2, 86, 13, 405],
+    "users": {
+      "drivers": [14, 19, 122],
+      "racers": [155, 267, 2351, 123],
+      "judges": [164, 2462, 24524]
+    }
+  }
+]
