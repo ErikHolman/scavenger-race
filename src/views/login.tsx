@@ -18,7 +18,11 @@ export const Login = () => {
         <div className='logo-container'>
           <img className='logo' src={logo} alt='temp logo' />
         </div>
-        <div className='text'>Snomazing Race 2024!</div>
+        <h1 className='text'>
+          Snomazing
+          <br />
+          Race
+        </h1>
       </div>
       <div className='border'></div>
       <div className='right'>
@@ -48,9 +52,9 @@ export const Login = () => {
             <button>DEVELOPER SECRET</button>
           </div>
         </form>
-        <div className='login-issue'>{error}</div>
+        {/* <div className='login-issue'>{error}</div>
         <span>FormData usr: {username || 'blank'}</span>
-        <span>FormData pwd: {password || 'blank'}</span>
+        <span>FormData pwd: {password || 'blank'}</span> */}
       </div>
     </div>
   );

@@ -5,11 +5,10 @@
   align-items: center;
   width: 80vw;
   height: 80vh;
-  border: 2px dashed yellow;
   overflow: hidden;
   & .left {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-direction: column;
     align-content: space-between;
     align-items: center;
@@ -34,14 +33,16 @@
       align-self: center;
       font-weight: 800;
       text-transform: uppercase;
+      text-align: center;
     }
   }
 
   & .border {
     display: flex;
-    height: 85%;
-    background-color: #9e9e9e;
-    width: 1px;
+    height: 45%;
+    background-color: rgba(225, 225, 225, 0.7);
+    border-radius: 80%;
+    width: 2px;
   }
 
   & .right {
@@ -76,6 +77,11 @@
           display: flex;
           width: 80%;
         }
+      }
+      & .buttons {
+        height: 25%;
+        flex-direction: column;
+        justify-content: space-evenly;
       }
     }
   }
