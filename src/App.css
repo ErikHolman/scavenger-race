@@ -4,4 +4,6 @@
   flex-direction: column;
   overflow: scroll;
   justify-content: center;
+  align-content: space-around;
+  flex-wrap: wrap;
 }
