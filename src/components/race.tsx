@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Leg } from './leg';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import './race.scss';
 import raceData from '../_sampleData/sampleRace.json';
 // import legData from '../_sampleData/sampleLegs.json';
@@ -15,7 +15,8 @@ export const Race = () => {
   const [sideBarVisible, setSideBarVisible] = useState(true);
 
   // local non-state
-  const currRace = raceData[2];
+  const urlParams = useParams();
+  const currRace = raceData[urlParams.raceId];
   // let selectedLeg = 0;
 
   function closeSidebar() {
@@ -32,7 +33,7 @@ export const Race = () => {
           {sideBarVisible && (
             <div className='race-sidebar'>
               <button onClick={closeSidebar}>close</button>
-              <Link to={`/`}>Logout</Link>
+              <Link to={`/race/`}>Back to Race Picker</Link>
               <div className='leg-data'>
                 Welcome to {currRace.name}! This race has {currRace.legs.length}{' '}
                 legs and is scheduled to start on {currRace.raceDate} at{' '}
@@ -66,6 +67,7 @@ export const Race = () => {
                   return <li key={index}>{leg}</li>;
                 })}
               </div>
+              <Link to={`/`}>Logout</Link>
             </div>
           )}
         </div>

@@ -6,7 +6,7 @@
 
   & .opened-sidebar {
     display: flex;
-    width: 33%;
+    min-width: 250px;
     & .race-sidebar {
       border-right: 1px solid #9c9c9c;
       & .leg-data,

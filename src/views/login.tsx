@@ -31,6 +31,7 @@ export const Login = () => {
           <div className='username-group'>
             <label>Username:</label>
             <input
+              disabled
               type='text'
               value={username}
               onChange={(event) => setUsername(event.target.value)}
@@ -40,6 +41,7 @@ export const Login = () => {
           <div className='password-group'>
             <label>Password:</label>
             <input
+              disabled
               type='password'
               value={password}
               onChange={(event) => setPassword(event.target.value)}
@@ -47,10 +49,10 @@ export const Login = () => {
             ></input>
           </div>
           <div className='buttons'>
-            <button type='submit' onClick={handleClick}>
+            <button disabled type='submit' onClick={handleClick}>
               JOIN YOUR RACE
             </button>
-            <Link to={`race/1`}>DEVELOPER SECRET</Link>
+            <Link to={`race`}>Dev Skip Login</Link>
           </div>
         </form>
         {/* <div className='login-issue'>{error}</div>

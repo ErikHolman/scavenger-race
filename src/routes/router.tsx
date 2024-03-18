@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App.tsx';
 import ErrorPage from '../error-page.tsx';
+import { RaceLanding } from '../views/raceLanding.tsx';
 import { Race } from '../components/race.tsx';
 
 export const router = createBrowserRouter([
@@ -10,7 +11,8 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: '/race/:raceId',
-    element: <Race />,
+    path: '/race/',
+    element: <RaceLanding />,
   },
+  { path: '/race/:raceId/', element: <Race /> },
 ]);
