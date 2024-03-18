@@ -1,11 +1,30 @@
 [
   {
-    "admin": [
-      { "id": 1, "name": "jessica", "password": "hubs" },
-      { "id": 2, "name": "erik", "password": "weefola" }
-    ],
-    "drivers": [],
-    "racers": [],
-    "judges": []
+    "id": 1,
+    "name": "jessica",
+    "password": "hubs",
+    "races": [],
+    "roles": [0, 1, 2]
+  },
+  {
+    "id": 2,
+    "name": "erik",
+    "password": "weefola",
+    "races": [],
+    "roles": [0, 1, 2]
+  },
+  {
+    "id": 3,
+    "name": "koko",
+    "password": "birdz",
+    "races": [],
+    "roles": [2, 3]
+  },
+  {
+    "id": 4,
+    "name": "Spectator1",
+    "password": "watcher",
+    "races": [],
+    "roles": [4]
   }
 ]
