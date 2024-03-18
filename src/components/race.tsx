@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Leg } from './leg';
 import { Link, useParams } from 'react-router-dom';
 import './race.scss';
-import raceData from '../_sampleData/sampleRace.json';
-// import legData from '../_sampleData/sampleLegs.json';
+import raceData from '@sampleD/sampleRace.json';
+// import legData from '@sampleD/sampleLegs.json';
 
 // This view is the overview of the race components
 
