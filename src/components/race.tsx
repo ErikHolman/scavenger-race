@@ -14,7 +14,7 @@ export const Race = () => {
   const [sideBarVisible, setSideBarVisible] = useState(true);
 
   // local non-state
-  const currRace = raceData[0];
+  const currRace = raceData[2];
   // let selectedLeg = 0;
 
   function closeSidebar() {
@@ -37,23 +37,32 @@ export const Race = () => {
                 {currRace.raceStart}.
               </div>
               <div className='race-users'>
-                There are:
+                Participents:
                 <ul>
-                  <li>DRIVERS: {currRace.users.drivers.length}</li>
-                  {/* @todo: Type issues *}
-                  {/* <ul>
-                    {currRace.users.drivers.map((driver: number, index: number) => {
-                      <li key={index}>{driver}</li>
-                    }};
-                  </ul> */}
-                  <li>RACERS: {currRace.users.racers.length} </li>
-                  <li>JUDGES: {currRace.users.judges.length}</li>
+                  <li>DRIVERS ({currRace.users.drivers.length})</li>
+
+                  {currRace.users.drivers.map((driver, index) => {
+                    return <li key={index}>{driver}</li>;
+                  })}
+
+                  <li>RACERS ({currRace.users.racers.length})</li>
+
+                  {currRace.users.racers.map((racer, index) => {
+                    return <li key={index}>{racer}</li>;
+                  })}
+
+                  <li>JUDGES ({currRace.users.judges.length})</li>
+
+                  {currRace.users.judges.map((judge, index) => {
+                    return <li key={index}>{judge}</li>;
+                  })}
                 </ul>
-                currently assigned to this race.
               </div>
               <div className='race-legs'>
                 Leg List:
-                <p>need to pull leg titles in a list</p>
+                {currRace.legs.map((leg, index) => {
+                  return <li key={index}>{leg}</li>;
+                })}
               </div>
             </div>
           )}

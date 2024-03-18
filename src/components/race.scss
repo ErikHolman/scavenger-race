@@ -8,16 +8,17 @@
     display: flex;
     width: 33%;
     & .race-sidebar {
-      border-right: 1px solid red;
-      background-color: green !important;
+      border-right: 1px solid #9c9c9c;
+      & .leg-data,
+      .race-users {
+        margin-top: 1em;
+      }
     }
   }
 
   & .closed-sidebar {
     display: flex;
-    width: min-content;
-    background-color: green;
-    border-right: 1px solid red;
+    width: 10%;
   }
 
   & .race {
@@ -26,5 +27,7 @@
     flex-wrap: nowrap;
     overflow-x: scroll;
     justify-content: space-around;
+    padding-left: 1em;
+    overflow: scroll;
   }
 }
