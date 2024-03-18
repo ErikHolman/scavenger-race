@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Roles } from '../types/users';
-import UserList from '@sampleD/sampleUsers.json';
+import UserList from '../_sampleData/sampleUsers.json';
 
 export const UserView = () => {
   return (

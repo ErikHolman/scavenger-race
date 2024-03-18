@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import raceData from '@sampleD/sampleRace.json';
+import raceData from '../_sampleData/sampleRace.json';
 
 export const RaceLanding = () => {
   return (

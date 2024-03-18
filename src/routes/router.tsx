@@ -1,9 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App.tsx';
 import ErrorPage from '../error-page.tsx';
-import { Race } from '@comps/race.tsx';
-import { RaceLanding } from '@views/raceLanding.tsx';
-import { UserView } from '@views/user.tsx';
+import { Race } from '../components/race.tsx';
+import { RaceLanding } from '../views/raceLanding.tsx';
+import { UserView } from '../views/user.tsx';
 
 export const router = createBrowserRouter([
   {

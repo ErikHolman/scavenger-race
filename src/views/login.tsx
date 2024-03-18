@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '@assets/amazing-race.webp';
+import logo from '../assets/amazing-race.webp';
 import './scss/login.scss';
 
 export const Login = () => {
