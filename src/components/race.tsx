@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Leg } from './leg';
+import { Link } from 'react-router-dom';
 import './race.scss';
 import raceData from '../_sampleData/sampleRace.json';
 // import legData from '../_sampleData/sampleLegs.json';
@@ -31,6 +32,7 @@ export const Race = () => {
           {sideBarVisible && (
             <div className='race-sidebar'>
               <button onClick={closeSidebar}>close</button>
+              <Link to={`/`}>Logout</Link>
               <div className='leg-data'>
                 Welcome to {currRace.name}! This race has {currRace.legs.length}{' '}
                 legs and is scheduled to start on {currRace.raceDate} at{' '}

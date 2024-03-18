@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/amazing-race.webp';
 import './scss/login.scss';
 
@@ -49,7 +50,7 @@ export const Login = () => {
             <button type='submit' onClick={handleClick}>
               JOIN YOUR RACE
             </button>
-            <button>DEVELOPER SECRET</button>
+            <Link to={`race/1`}>DEVELOPER SECRET</Link>
           </div>
         </form>
         {/* <div className='login-issue'>{error}</div>
