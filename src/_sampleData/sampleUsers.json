@@ -1,26 +1,24 @@
 [
   {
-    "id": 1,
-    "first_name": "jessica",
-    "last_name": "holman",
-    "roles": [0, 1, 2]
-  },
-  {
-    "id": 2,
-    "first_name": "erik",
-    "last_name": "HoLmaN",
-    "roles": [0, 1, 2]
-  },
-  {
-    "id": 3,
-    "first_name": "koko",
-    "last_name": "holman",
-    "roles": [2, 3]
-  },
-  {
-    "id": 4,
-    "first_name": "Spectator1",
-    "last_name": "watching",
-    "roles": []
+    "1": {
+      "first_name": "jessica",
+      "last_name": "holman",
+      "roles": [0, 1, 2]
+    },
+    "2": {
+      "first_name": "erik",
+      "last_name": "HoLmaN",
+      "roles": [0, 1, 2]
+    },
+    "3": {
+      "first_name": "koko",
+      "last_name": "holman",
+      "roles": [2, 3]
+    },
+    "4": {
+      "first_name": "Spectator1",
+      "last_name": "watching",
+      "roles": []
+    }
   }
 ]

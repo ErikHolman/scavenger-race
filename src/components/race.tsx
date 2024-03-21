@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Leg } from './leg';
-import { Link, useParams } from 'react-router-dom';
 import './race.scss';
 import raceData from '../_sampleData/sampleRace.json';
-// import legData from '../_sampleData/sampleLegs.json';
+import legData from '../_sampleData/sampleLegs.json';
+import allUsers from '../_sampleData/sampleUsers.json';
 
 // This view is the overview of the race components
 
@@ -15,8 +15,7 @@ export const Race = () => {
   const [sideBarVisible, setSideBarVisible] = useState(true);
 
   // local non-state
-  const urlParams = useParams();
-  const currRace = raceData[urlParams.raceId];
+  const currRace = raceData[0];
   // let selectedLeg = 0;
 
   function closeSidebar() {
@@ -33,29 +32,35 @@ export const Race = () => {
           {sideBarVisible && (
             <div className='race-sidebar'>
               <button onClick={closeSidebar}>close</button>
-              <Link to={`/race/`}>Back to Race Picker</Link>
               <div className='leg-data'>
-                Welcome to {currRace.name}! This race has {currRace.legs.length}{' '}
-                legs and is scheduled to start on {currRace.raceDate} at{' '}
+                Welcome to {currRace.name}!<br />
+                <br /> This race has {currRace.legs.length} legs and is
+                scheduled to start on {currRace.raceDate} at{' '}
                 {currRace.raceStart}.
               </div>
               <div className='race-users'>
-                Participents:
+                <div className='label'>participants</div>
+                <span className='label'>drivers:</span> (
+                {currRace.users.drivers.length})
                 <ul>
-                  <li>DRIVERS ({currRace.users.drivers.length})</li>
-
                   {currRace.users.drivers.map((driver, index) => {
-                    return <li key={index}>{driver}</li>;
+                    return (
+                      <>
+                        <li key={index}>{allUsers[`${driver}`]}</li>
+                      </>
+                    );
                   })}
-
-                  <li>RACERS ({currRace.users.racers.length})</li>
-
+                </ul>
+                <span className='label'>racers:</span> (
+                {currRace.users.racers.length})
+                <ul>
                   {currRace.users.racers.map((racer, index) => {
                     return <li key={index}>{racer}</li>;
                   })}
-
-                  <li>JUDGES ({currRace.users.judges.length})</li>
-
+                </ul>
+                <span className='label'>judges:</span> (
+                {currRace.users.judges.length})
+                <ul>
                   {currRace.users.judges.map((judge, index) => {
                     return <li key={index}>{judge}</li>;
                   })}
@@ -67,7 +72,6 @@ export const Race = () => {
                   return <li key={index}>{leg}</li>;
                 })}
               </div>
-              <Link to={`/`}>Logout</Link>
             </div>
           )}
         </div>

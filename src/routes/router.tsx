@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import App from '../App.tsx';
 import ErrorPage from '../error-page.tsx';
 import { Race } from '../components/race.tsx';
-import { RaceLanding } from '../views/raceLanding.tsx';
+import { Welcome } from '../views/welcome.tsx';
 import { UserView } from '../views/user.tsx';
 
 export const router = createBrowserRouter([
@@ -12,8 +12,8 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: '/race/',
-    element: <RaceLanding />,
+    path: '/welcome/',
+    element: <Welcome />,
   },
   { path: `/race/:raceId/`, element: <Race /> },
   { path: '/user/list', element: <UserView /> },

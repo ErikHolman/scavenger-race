@@ -6,9 +6,9 @@ export interface IUser {
 }
 
 export enum Roles {
-  'admin',
-  'driver',
-  'judge',
-  'racer',
-  'spectator',
+  Admin = 'admin',
+  Driver = 'driver',
+  Judge = 'judge',
+  Racer = 'racer',
+  Spectator = 'spectator',
 }
