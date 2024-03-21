@@ -1,37 +1,21 @@
-import { Link } from 'react-router-dom';
-import { Roles } from '../types/users';
+import { UserCard } from '../components/userCard';
 import UserList from '../_sampleData/sampleUsers.json';
+import { Link } from 'react-router-dom';
+import './scss/user.scss';
 
 export const UserView = () => {
   return (
-    <>
-      <h1>User Page</h1>
-      <div>
-        {UserList.map((person) => {
-          return (
-            <div key={person.id}>
-              <div>
-                <Link to={`/user/${person.id}`}>{person.name}</Link>
-              </div>
-              <div>
-                Their password is: {person.password}...
-                <br />
-                Current Roles:{' '}
-                {person.roles.map((assignedRole, index) => {
-                  return (
-                    <>
-                      <Link to={`/role/${assignedRole}`} key={index}>
-                        {Roles[assignedRole]}
-                      </Link>{' '}
-                    </>
-                  );
-                })}
-                <br />
-              </div>
-            </div>
-          );
-        })}
+    <div className='user-view'>
+      <h1>User List</h1>
+      <div className='user-count'>{UserList.length} Racers</div>
+      <div className='user-list'>
+        {UserList.map((person) => (
+          <UserCard data={person} key={person.id} />
+        ))}
       </div>
-    </>
+      <Link to={`/user/new`} className='add-user'>
+        + ADD USER
+      </Link>
+    </div>
   );
 };

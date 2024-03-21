@@ -1,30 +1,26 @@
 [
   {
     "id": 1,
-    "name": "jessica",
-    "password": "hubs",
-    "races": [],
+    "first_name": "jessica",
+    "last_name": "holman",
     "roles": [0, 1, 2]
   },
   {
     "id": 2,
-    "name": "erik",
-    "password": "weefola",
-    "races": [],
+    "first_name": "erik",
+    "last_name": "HoLmaN",
     "roles": [0, 1, 2]
   },
   {
     "id": 3,
-    "name": "koko",
-    "password": "birdz",
-    "races": [],
+    "first_name": "koko",
+    "last_name": "holman",
     "roles": [2, 3]
   },
   {
     "id": 4,
-    "name": "Spectator1",
-    "password": "watcher",
-    "races": [],
-    "roles": [4]
+    "first_name": "Spectator1",
+    "last_name": "watching",
+    "roles": []
   }
 ]

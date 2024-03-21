@@ -16,6 +16,8 @@ export const router = createBrowserRouter([
     element: <RaceLanding />,
   },
   { path: `/race/:raceId/`, element: <Race /> },
-  { path: '/user/', element: <UserView /> },
-  { path: `/user/:userId`, element: <UserView /> },
+  { path: '/user/list', element: <UserView /> },
+  { path: `/user/edit/:userId`, element: <div>{`Edit User {:userID}`}</div> },
+  { path: `/user/kill/:userId`, element: <div>{`Kill User {:userID}`}</div> },
+  { path: `/user/new/`, element: <div>New User Page</div> },
 ]);
