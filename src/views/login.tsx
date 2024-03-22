@@ -55,8 +55,8 @@ export const Login = () => {
             <Link to={`welcome`}>Dev Skip Login</Link>
           </div>
         </form>
-        {/* <div className='login-issue'>{error}</div>
-        <span>FormData usr: {username || 'blank'}</span>
+        <div className='login-issue'>{error}</div>
+        {/* <span>FormData usr: {username || 'blank'}</span>
         <span>FormData pwd: {password || 'blank'}</span> */}
       </div>
     </div>
