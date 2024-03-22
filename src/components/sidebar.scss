@@ -1,17 +1,54 @@
-.opened-sidebar {
-  display: flex;
-  min-width: 250px;
-  overflow-y: scroll;
-  & .race-sidebar {
+.race-overview {
+  & .closed-sidebar,
+  .opened-sidebar {
     border-right: 1px solid #9c9c9c;
-    & .leg-data,
-    .race-users {
-      margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  & .closed-sidebar {
+    flex: none;
+    & .race-sidebar {
+      display: flex;
+      flex-direction: column;
+      & button {
+        width: fit-content;
+      }
     }
   }
-}
 
-.closed-sidebar {
-  display: flex;
-  width: 10%;
+  & .opened-sidebar {
+    flex-grow: 0.3;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    & .race-sidebar {
+      display: flex;
+      flex-direction: column;
+
+      & button {
+        width: fit-content;
+      }
+
+      & .leg-data,
+      .race-users {
+        margin-top: 1em;
+      }
+
+      & .leg-data {
+        display: flex;
+      }
+
+      & .race-users {
+        display: flex;
+        flex-direction: column;
+        & .cloud {
+          padding: 0 0.25em;
+
+          & .pill {
+            padding: 1em;
+          }
+        }
+      }
+    }
+  }
 }

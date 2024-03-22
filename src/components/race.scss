@@ -1,15 +1,27 @@
 .race-overview {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
-  padding: 16px;
-
+  overflow: hidden;
+  height: 100%;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
   & .race {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
     padding-left: 1em;
+    padding-right: 1em;
     overflow: scroll;
+    height: 100%;
+    min-inline-size: 50%;
   }
+}
+
+.race-overview > * {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
 }

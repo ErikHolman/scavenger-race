@@ -2,6 +2,7 @@ import './sidebar.scss';
 import { useState } from 'react';
 import allUsers from '../_sampleData/sampleUsers.json';
 import raceData from '../_sampleData/sampleRace.json';
+import { Link } from 'react-router-dom';
 
 export const Sidebar = () => {
   // local state
@@ -9,7 +10,6 @@ export const Sidebar = () => {
 
   // local non-state
   const currRace = raceData[0];
-  // let selectedLeg = 0;
 
   function closeSidebar() {
     setSideBarVisible(false);
@@ -17,6 +17,8 @@ export const Sidebar = () => {
   function openSidebar() {
     setSideBarVisible(true);
   }
+
+  const userList = allUsers[0];
 
   return (
     <>
@@ -33,29 +35,58 @@ export const Sidebar = () => {
               </div>
               <div className='race-users'>
                 <div className='label'>participants</div>
-                <span className='label'>drivers:</span> (
-                {currRace.users.drivers.length})
+                <div className='label'>
+                  drivers: ({currRace.users.drivers.length})
+                </div>
                 <ul>
                   {currRace.users.drivers.map((driver, index) => {
                     return (
-                      <>
-                        <li key={index}>{allUsers[`${driver}`]}</li>
-                      </>
+                      <div className='cloud'>
+                        <Link
+                          to={`/user/edit/${driver}`}
+                          className='pill driver'
+                          key={index}
+                        >
+                          {userList[driver].first_name}
+                        </Link>
+                      </div>
                     );
                   })}
                 </ul>
-                <span className='label'>racers:</span> (
-                {currRace.users.racers.length})
+                <div className='label'>
+                  racers: ({currRace.users.racers.length})
+                </div>
                 <ul>
                   {currRace.users.racers.map((racer, index) => {
-                    return <li key={index}>{racer}</li>;
+                    return (
+                      <div className='cloud'>
+                        <Link
+                          to={`/user/edit/${racer}`}
+                          className='pill racer'
+                          key={index}
+                        >
+                          {userList[racer].first_name}
+                        </Link>
+                      </div>
+                    );
                   })}
                 </ul>
-                <span className='label'>judges:</span> (
-                {currRace.users.judges.length})
+                <div className='label'>
+                  judges: ({currRace.users.judges.length})
+                </div>
                 <ul>
                   {currRace.users.judges.map((judge, index) => {
-                    return <li key={index}>{judge}</li>;
+                    return (
+                      <div className='cloud'>
+                        <Link
+                          to={`/user/edit/${judge}`}
+                          className='pill judge'
+                          key={index}
+                        >
+                          {userList[judge].first_name}
+                        </Link>
+                      </div>
+                    );
                   })}
                 </ul>
               </div>
@@ -70,8 +101,8 @@ export const Sidebar = () => {
         </div>
       )}
       {!sideBarVisible && (
-        <div className='race-sidebar'>
-          <div className='closed-sidebar'>
+        <div className='closed-sidebar'>
+          <div className='race-sidebar'>
             {!sideBarVisible && <button onClick={openSidebar}>open</button>}
           </div>
         </div>

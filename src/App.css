@@ -7,3 +7,10 @@
   align-content: space-around;
   flex-wrap: wrap;
 }
+
+#root .vert-spacer {
+  padding: 1em 0 0 0;
+}
+#root .horz-spacer {
+  padding: 0 0 0 1em;
+}
