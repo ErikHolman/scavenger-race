@@ -9,6 +9,10 @@
     background-color: rgba(150, 200, 150, 0.8);
   }
 
+  & .task-edit-link {
+    color: black;
+  }
+
   & .task-id {
     font-size: 0.2em;
     text-transform: uppercase;
