@@ -8,7 +8,7 @@ export const Welcome = () => {
     <div className='frame'>
       <h3>THE RACE BUILDER</h3>
       <NavBar />
-      <div className='content'>
+      <div className='content view'>
         <Race />
       </div>
       <div className='footer'>
