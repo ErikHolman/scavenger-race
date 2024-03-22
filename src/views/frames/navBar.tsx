@@ -12,14 +12,14 @@ export const NavBar = () => {
     'All Roles': {
       children: [...activeRoleKey],
       visible: false,
-      url: '/roles/',
+      url: '/role/list',
     },
     'All Legs': {
       children: ['leg 1', 'leg 2'],
       visible: false,
-      url: '/legs/list',
+      url: '/leg/list',
     },
-    'All Tasks': { children: [], visible: false, url: '/tasks/list' },
+    'All Tasks': { children: [], visible: false, url: '/task/list' },
   });
 
   const menuItemTitles = Object.keys(menuItems);
