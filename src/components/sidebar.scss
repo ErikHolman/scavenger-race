@@ -5,7 +5,20 @@
     display: flex;
     flex-direction: column;
     padding: 10px;
+    overflow-y: scroll;
+    & button {
+      border: 0;
+      background-color: red;
+      width: fit-content;
+      height: fit-content;
+      padding: 0;
+      font-size: 2em;
+      &:hover {
+        background-color: aquamarine;
+      }
+    }
   }
+
   & .closed-sidebar {
     flex: none;
     & .race-sidebar {
@@ -25,27 +38,88 @@
       display: flex;
       flex-direction: column;
 
-      & button {
-        width: fit-content;
-      }
-
-      & .leg-data,
-      .race-users {
-        margin-top: 1em;
-      }
-
-      & .leg-data {
+      & .top {
         display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      & .race-data {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-left: 1em;
+        & .race-title {
+          font-weight: 700;
+          border-bottom: 1px solid black;
+        }
+
+        & .race-detail {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          align-items: stretch;
+          padding-top: 0.25em;
+          padding-bottom: 0.25em;
+          padding-left: 1em;
+          & span {
+            color: green;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 900;
+          }
+        }
       }
 
       & .race-users {
         display: flex;
         flex-direction: column;
-        & .cloud {
-          padding: 0 0.25em;
+        margin-top: 1em;
 
-          & .pill {
-            padding: 1em;
+        & .user-title {
+          font-weight: 700;
+          border-bottom: 1px solid black;
+          padding: 0;
+        }
+
+        & .user-label {
+          padding: 0.5em 1em 0 1em;
+          font-weight: 700;
+        }
+      }
+
+      & .race-legs {
+        margin-top: 1em;
+        & .leg-title {
+          font-weight: 700;
+          border-bottom: 1px solid black;
+          margin-bottom: 0.5em;
+        }
+      }
+
+      & .cloud {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0.5em 0.15em;
+        margin: 0 1em;
+        border-radius: 0.3em;
+        background-color: lightskyblue;
+        & .pill {
+          display: flex;
+          padding: 0.15em 1em;
+          border-radius: 12px;
+          width: fit-content;
+          border: 2px solid white;
+          background-color: #f6f6f6;
+          text-transform: uppercase;
+          cursor: pointer;
+          color: #000;
+          margin: 0.2em;
+          font-size: 0.8em;
+          &:hover {
+            transition: all 0.1s;
+            scale: 1.06;
           }
         }
       }
