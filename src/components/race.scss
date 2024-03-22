@@ -4,24 +4,6 @@
   justify-content: space-between;
   padding: 16px;
 
-  & .opened-sidebar {
-    display: flex;
-    min-width: 250px;
-    overflow-y: scroll;
-    & .race-sidebar {
-      border-right: 1px solid #9c9c9c;
-      & .leg-data,
-      .race-users {
-        margin-top: 1em;
-      }
-    }
-  }
-
-  & .closed-sidebar {
-    display: flex;
-    width: 10%;
-  }
-
   & .race {
     display: flex;
     flex-direction: row;
