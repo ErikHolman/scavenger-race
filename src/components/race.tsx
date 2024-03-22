@@ -84,9 +84,9 @@ export const Race = () => {
         </div>
       )}
       <div className='race'>
-        {currRace.legs.map((index) => (
-          <Leg legIndex={index} key={index} />
-        ))}
+        {legData.map((leg, index) => {
+          return <Leg legData={leg} legNumber={index + 1} key={index} />;
+        })}
       </div>
     </div>
   );

@@ -1,37 +1,43 @@
 // this is the leg component, it contains tasks
 import { Task } from './tasks/task';
+import './leg.scss';
 
-type Props = { legIndex: number };
+export const Leg = (props) => {
+  const localTasks: {
+    taskId: string;
+    name: string;
+    type: string;
+    challenge: string;
+    instruction: string;
+    intro: {
+      challenge: string;
+      instruction: string;
+    };
+    detourA: {
+      title: string;
+      challenge: string;
+      instruction: string;
+    };
+    detourB: {
+      title: string;
+      challenge: string;
+      instruction: string;
+    };
+  }[] = Object.values(props.legData);
 
-export const Leg = (props: Props) => {
   return (
     <div className='leg'>
-      <h2>This is Leg #{props.legIndex}.</h2>
+      <h2>This is Leg #{props.legNumber}.</h2>
       <div>
-        <div className='card'>
-          <h3>Task 1</h3>
-          <Task taskType='route' />
-        </div>
-        <div className='card'>
-          <h3>Task 2</h3>
-          <Task taskType='road' />
-        </div>
-        <div className='card'>
-          <h3>Task 3</h3>
-          <Task taskType='detour' />
-        </div>
-        <div className='card'>
-          <h3>Task 4</h3>
-          <Task taskType='route' />
-        </div>
-        <div className='card'>
-          <h3>Task 5</h3>
-          <Task taskType='road' />
-        </div>
-        <div className='card'>
-          <h3>Task 6</h3>
-          <Task taskType='route' />
-        </div>
+        {localTasks.map((task) => {
+          return (
+            <>
+              <div key={`card-${task.taskId}`} className='card'>
+                <Task taskType={task.type} taskData={task} />
+              </div>
+            </>
+          );
+        })}
       </div>
     </div>
   );

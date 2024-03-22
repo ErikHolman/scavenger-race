@@ -4,7 +4,35 @@
   padding: 16px;
   margin: 6px;
   cursor: pointer;
+  background-color: honeydew;
   &:hover {
     background-color: rgba(150, 200, 150, 0.8);
+  }
+
+  & .task-id {
+    font-size: 0.2em;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: red;
+  }
+
+  & .task {
+    display: flex;
+    flex-direction: column;
+    & p {
+      margin: 0;
+      margin-bottom: 6px;
+    }
+    & .title {
+      text-transform: uppercase;
+    }
+    & .intro {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    & .direction {
+      display: flex;
+      margin-bottom: 10px;
+    }
   }
 }

@@ -1,0 +1,16 @@
+.road-block {
+  & .instruction {
+    display: flex;
+    padding-left: 12px;
+    flex-direction: row;
+    align-items: center;
+    & .icon {
+      font-size: 30px;
+      display: flex;
+      position: relative;
+      padding: 0;
+      margin: 0;
+      right: 10px;
+    }
+  }
+}

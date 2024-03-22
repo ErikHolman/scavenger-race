@@ -1,13 +1,12 @@
-import './roadBlock.scss';
+import './fast.scss';
 
-export const RoadBlock = (props) => {
+export const Fast = (props) => {
   const detourText = {
     challenge: `${props.data.challenge}`,
     instruction: `${props.data.instruction}`,
   };
-
   return (
-    <div className='task road-block'>
+    <div className='task fast'>
       <div>
         <strong>{props.data.name}</strong>
       </div>
