@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import App from '../App.tsx';
 import ErrorPage from '../error-page.tsx';
 import { Race } from '../components/race.tsx';
-import { Welcome } from '../views/welcome.tsx';
+import { Builder } from '../views/builder.tsx';
 import { UserView } from '../views/user.tsx';
 
 export const router = createBrowserRouter([
@@ -11,12 +11,9 @@ export const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
   },
-  {
-    path: '/welcome/',
-    element: <Welcome />,
-  },
   // Race view routes
   { path: `/race/`, element: <Race /> },
+  { path: '/race/builder/', element: <Builder /> },
   { path: `/race/spectator/`, element: <div>Spectator page</div> },
   { path: `/race/racer/:racerId`, element: <div>Racer page</div> },
   // User routes

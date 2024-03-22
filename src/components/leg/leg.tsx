@@ -1,5 +1,5 @@
 // this is the leg component, it contains tasks
-import { Task } from './tasks/task';
+import { Task } from '../task/task';
 import './leg.scss';
 import { Link } from 'react-router-dom';
 

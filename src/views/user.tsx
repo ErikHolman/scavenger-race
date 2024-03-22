@@ -1,4 +1,4 @@
-import { UserCard } from '../components/userCard';
+import { UserCard } from '../components/user/userCard';
 import UserList from '../_sampleData/sampleUsers.json';
 import { Link } from 'react-router-dom';
 import './scss/user.scss';

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Leg } from './leg';
+import { Leg } from './leg/leg';
 import './race.scss';
 import raceData from '../_sampleData/sampleRace.json';
 import legData from '../_sampleData/sampleLegs.json';

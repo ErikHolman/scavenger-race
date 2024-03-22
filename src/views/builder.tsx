@@ -1,9 +1,9 @@
 import { NavBar } from './frames/navBar';
 import { Link } from 'react-router-dom';
 import { Race } from '../components/race';
-import './scss/welcome.scss';
+import './scss/builder.scss';
 
-export const Welcome = () => {
+export const Builder = () => {
   return (
     <div className='frame'>
       <h3>THE RACE BUILDER</h3>

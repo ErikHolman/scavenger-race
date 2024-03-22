@@ -1,4 +1,4 @@
-import { Roles as userRole } from '../types/users';
+import { Roles as userRole } from '../../types/users';
 import { Link } from 'react-router-dom';
 import './userCard.scss';
 
