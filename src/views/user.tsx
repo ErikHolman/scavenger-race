@@ -4,13 +4,17 @@ import { Link } from 'react-router-dom';
 import './scss/user.scss';
 
 export const UserView = () => {
+  const wholeList = UserList[0];
+  const currentUsers = Object.keys(wholeList);
+
   return (
     <div className='user-view'>
+      <Link to={`/welcome`}>{'<- BACK'}</Link>
       <h1>User List</h1>
-      <div className='user-count'>{UserList.length} Racers</div>
+      <div className='user-count'>{currentUsers.length} Racers</div>
       <div className='user-list'>
-        {UserList.map((person) => (
-          <UserCard data={person} key={person.id} />
+        {currentUsers.map((person, index) => (
+          <UserCard data={wholeList[person]} key={currentUsers[index]} />
         ))}
       </div>
       <Link to={`/user/new`} className='add-user'>

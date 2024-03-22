@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Roles as userRole } from '../types/users';
 import { Link } from 'react-router-dom';
 import './userCard.scss';
@@ -6,18 +5,16 @@ import './userCard.scss';
 export const UserCard = ({ data }) => {
   console.log({ data });
 
-  const [form, setform] = useState({
-    id: 0,
-    firstName: 'fnam',
-    lastName: 'lnam',
-    role: [],
-  });
+  const currentUser = Object.keys(data);
+  const currentUserInfo = Object.values(data);
+
+  console.log(currentUser, currentUserInfo);
 
   return (
     <div className='user-card'>
       <div className='user-image'></div>
       <div className='user-data'>
-        <div className='user-id'>User ID - {data.id}</div>
+        <div className='user-id'>User ID - {}</div>
         <Link className='user-name' to={`/user/edit/${data.id}`}>
           {data.first_name} {data.last_name}
         </Link>
