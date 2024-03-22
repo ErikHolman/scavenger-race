@@ -35,9 +35,12 @@
       padding: 3px;
       margin-right: 12px;
       background-color: white;
+      text-align: center;
+      color: black;
 
       &:hover {
-        background-color: burlywood;
+        background-color: #6f6f6f;
+        color: white;
       }
 
       & .drop-down {

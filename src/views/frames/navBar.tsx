@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Roles } from '../../types/users';
 import './navBar.scss';
 // import raceData from '../_sampleData/sampleRace.json';
@@ -7,16 +8,22 @@ export const NavBar = () => {
   const activeRoleKey = Object.keys(Roles);
 
   const [menuItems, setMenuItems] = useState({
-    'All Users': { children: [], visible: false, url: '/users/' },
-    Roles: { children: [...activeRoleKey], visible: false },
-    Legs: { children: ['leg 1', 'leg 2'], visible: false },
-    Tasks: { children: [], visible: false },
+    'All Users': { children: [], visible: false, url: '/user/list' },
+    'All Roles': {
+      children: [...activeRoleKey],
+      visible: false,
+      url: '/roles/',
+    },
+    'All Legs': {
+      children: ['leg 1', 'leg 2'],
+      visible: false,
+      url: '/legs/list',
+    },
+    'All Tasks': { children: [], visible: false, url: '/tasks/list' },
   });
 
   const menuItemTitles = Object.keys(menuItems);
   const menuItemContent = Object.values(menuItems);
-
-  console.log(menuItems.Roles);
 
   // const onHover = (item) => {
   //   console.log(menuItems[item]);
@@ -31,11 +38,15 @@ export const NavBar = () => {
         {menuItemTitles.map((item, index: number) => {
           return (
             <>
-              <div key={`${item}-button`} className='menu-item'>
+              <Link
+                to={`${menuItemContent[index].url}`}
+                key={`${item}-button`}
+                className='menu-item'
+              >
                 {item}
                 {menuItemContent[index].children.length > 0 && (
                   <div
-                    key={index}
+                    key={`${index}`}
                     className={`drop-down ${
                       menuItemContent[index].visible ? 'open' : 'closed'
                     }`}
@@ -45,32 +56,7 @@ export const NavBar = () => {
                     })}
                   </div>
                 )}
-              </div>
-              {/* {menuItemTitles[item].children.length === 0 && (
-                <div className='menu-item' key={index}>
-                  {item.label} - {item.visible}
-                </div>
-              )}
-              {item.children.length > 0 && (
-                <>
-                  <div
-                    className='menu-item'
-                    key={index}
-                    onClick={() => onHover(index)}
-                  >
-                    {item.label} - {item.visible.toString()}
-                    <div className={`drop-down ${item.visible ? 'open' : ''}`}>
-                      {item.children.map((menuSubItem, index) => {
-                        return (
-                          <div className='drop-down-item' key={index}>
-                            {menuSubItem}
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </>
-              )} */}
+              </Link>
             </>
           );
         })}
