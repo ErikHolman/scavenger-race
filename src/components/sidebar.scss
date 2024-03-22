@@ -8,10 +8,10 @@
     overflow-y: scroll;
     & button {
       border: 0;
-      background-color: red;
+      background-color: #f6f6;
       width: fit-content;
       height: fit-content;
-      padding: 0;
+      padding: 3px;
       font-size: 2em;
       &:hover {
         background-color: aquamarine;
