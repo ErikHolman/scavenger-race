@@ -1,24 +1,32 @@
 [
   {
     "1": {
+      "id": "1",
       "first_name": "jessica",
       "last_name": "holman",
-      "roles": [0, 1, 2]
+      "roles": [0, 1, 2],
+      "image": "amazing-race.webp"
     },
     "2": {
+      "id": "2",
       "first_name": "erik",
       "last_name": "HoLmaN",
-      "roles": [0, 1, 2]
+      "roles": [0, 1, 2],
+      "image": "s"
     },
     "3": {
+      "id": "3",
       "first_name": "koko",
       "last_name": "holman",
-      "roles": [2, 3]
+      "roles": [2, 3],
+      "image": "e"
     },
     "4": {
+      "id": "4",
       "first_name": "Spectator1",
       "last_name": "watching",
-      "roles": []
+      "roles": [],
+      "image": "f"
     }
   }
 ]

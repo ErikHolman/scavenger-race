@@ -1,6 +1,7 @@
 import { UserCard } from '../components/user/userCard';
 import UserList from '../_sampleData/sampleUsers.json';
 import { Link } from 'react-router-dom';
+import { AddElement } from '../components/user/addElementButton';
 import './scss/user.scss';
 
 export const UserView = () => {
@@ -8,18 +9,20 @@ export const UserView = () => {
   const currentUsers = Object.keys(wholeList);
 
   return (
-    <div className='user-view'>
-      <Link to={`/welcome`}>{'<- BACK'}</Link>
-      <h1>User List</h1>
-      <div className='user-count'>{currentUsers.length} Racers</div>
-      <div className='user-list'>
-        {currentUsers.map((person, index) => (
-          <UserCard data={wholeList[person]} key={currentUsers[index]} />
-        ))}
+    <div className='frame'>
+      <h3>THE USER LIST</h3>
+      <div className='user-view'>
+        <div className='user-count'>There are {currentUsers.length} Users</div>
+        <div className='user-list'>
+          {currentUsers.map((person, index) => (
+            <UserCard data={wholeList[person]} key={currentUsers[index]} />
+          ))}
+        </div>
+        <AddElement type='user' />
       </div>
-      <Link to={`/user/new`} className='add-user'>
-        + ADD USER
-      </Link>
+      <div className='footer'>
+        <Link to={`/race/builder`}>BACK</Link>
+      </div>
     </div>
   );
 };

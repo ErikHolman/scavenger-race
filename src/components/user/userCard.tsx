@@ -3,24 +3,19 @@ import { Link } from 'react-router-dom';
 import './userCard.scss';
 
 export const UserCard = ({ data }) => {
-  console.log({ data });
-
-  const currentUser = Object.keys(data);
-  const currentUserInfo = Object.values(data);
-
-  console.log(currentUser, currentUserInfo);
-
   return (
     <div className='user-card'>
-      <div className='user-image'></div>
+      {data.image.length > 0 && (
+        <img src={`../../assets/${data.image}`} className='user-image' />
+      )}
       <div className='user-data'>
-        <div className='user-id'>User ID - {}</div>
+        <div className='user-id'>User ID - {data.id}</div>
         <Link className='user-name' to={`/user/edit/${data.id}`}>
           {data.first_name} {data.last_name}
         </Link>
         <div className='role-header'>
           <div>Roles:</div>
-          <div>EDIT ICON</div>
+          <div>✍️</div>
         </div>
         <div className='user-role-cloud'>
           {data.roles.length === 0 && 'NONE FOUND'}
