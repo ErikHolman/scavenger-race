@@ -15,10 +15,10 @@ export const Welcome = () => {
         <Link to={`/`} className='footer-buttons'>
           Logout
         </Link>
-        <Link to={`/`} className='footer-buttons'>
+        <Link to={`/race/racer/:racerId`} className='footer-buttons'>
           Join the race!
         </Link>
-        <Link to={`/`} className='footer-buttons'>
+        <Link to={`/race/spectator/`} className='footer-buttons'>
           Go Spectator Mode
         </Link>
       </div>

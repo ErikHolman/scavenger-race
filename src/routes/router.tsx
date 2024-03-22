@@ -17,7 +17,7 @@ export const router = createBrowserRouter([
   },
   // Race view routes
   { path: `/race/`, element: <Race /> },
-  { path: `/race/spectator/:spectatorId`, element: <div>Spectator page</div> },
+  { path: `/race/spectator/`, element: <div>Spectator page</div> },
   { path: `/race/racer/:racerId`, element: <div>Racer page</div> },
   // User routes
   { path: '/user/list', element: <UserView /> },
