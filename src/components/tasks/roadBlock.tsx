@@ -12,7 +12,7 @@ export const RoadBlock = (props) => {
         <strong>{props.data.name}</strong>
       </div>
       <div
-        className='intro'
+        className='challenge'
         dangerouslySetInnerHTML={{
           __html: `${detourText.challenge}`,
         }}

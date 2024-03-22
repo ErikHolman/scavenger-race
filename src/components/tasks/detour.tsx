@@ -24,7 +24,7 @@ export const Detour = (props) => {
         <strong>{detourText.title}</strong>
       </div>
       <div
-        className='intro'
+        className='challenge'
         dangerouslySetInnerHTML={{
           __html: `${detourText.intro.challenge}`,
         }}

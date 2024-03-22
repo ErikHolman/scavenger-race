@@ -11,7 +11,7 @@ export const RouteInfo = (props) => {
         <strong>{props.data.name}</strong>
       </div>
       <div
-        className='intro'
+        className='challenge'
         dangerouslySetInnerHTML={{
           __html: `${detourText.challenge}`,
         }}

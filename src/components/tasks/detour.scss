@@ -1,4 +1,8 @@
 .detour {
+  & .challenge {
+    display: flex;
+    flex-direction: column;
+  }
   & .instruction {
     display: flex;
     padding-left: 12px;

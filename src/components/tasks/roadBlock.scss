@@ -1,6 +1,11 @@
 .road-block {
+  & .challenge {
+    display: flex;
+    flex-direction: column;
+  }
   & .instruction {
     display: flex;
+    flex-direction: column;
     padding-left: 12px;
     flex-direction: row;
     align-items: center;
