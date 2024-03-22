@@ -1,7 +1,7 @@
 // this is the leg component, it contains tasks
 import { Task } from '../task/task';
 import './leg.scss';
-import { Link } from 'react-router-dom';
+import { AddElement } from '../user/addElementButton';
 
 export const Leg = (props) => {
   const localTasks: {
@@ -40,11 +40,7 @@ export const Leg = (props) => {
           );
         })}
       </div>
-      <div className='newTask'>
-        <Link to={`/task/new`} className='new-task-button'>
-          <div className='button-text'>+</div>
-        </Link>
-      </div>
+      <AddElement type='task' />
     </div>
   );
 };
