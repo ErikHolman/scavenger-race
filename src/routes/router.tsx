@@ -15,8 +15,10 @@ export const router = createBrowserRouter([
     path: '/welcome/',
     element: <Welcome />,
   },
-  // Race Overview route
+  // Race view routes
   { path: `/race/`, element: <Race /> },
+  { path: `/race/spectator/:spectatorId`, element: <div>Spectator page</div> },
+  { path: `/race/racer/:racerId`, element: <div>Racer page</div> },
   // User routes
   { path: '/user/list', element: <UserView /> },
   { path: `/user/edit/:userId`, element: <div>Edit user page</div> },
