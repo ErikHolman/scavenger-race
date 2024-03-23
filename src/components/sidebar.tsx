@@ -53,7 +53,7 @@ export const Sidebar = () => {
                   {currRace.users.drivers.map((driver, index) => {
                     return (
                       <Link
-                        to={`/users/edit/${driver}`}
+                        to={`/users/${driver}/edit`}
                         className='pill driver'
                         key={index}
                       >
