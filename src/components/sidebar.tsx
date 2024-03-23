@@ -53,7 +53,7 @@ export const Sidebar = () => {
                   {currRace.users.drivers.map((driver, index) => {
                     return (
                       <Link
-                        to={`/user/edit/${driver}`}
+                        to={`/users/edit/${driver}`}
                         className='pill driver'
                         key={index}
                       >
@@ -69,7 +69,7 @@ export const Sidebar = () => {
                   {currRace.users.racers.map((racer, index) => {
                     return (
                       <Link
-                        to={`/user/edit/${racer}`}
+                        to={`/users/${racer}/edit`}
                         className='pill racer'
                         key={index}
                       >
@@ -85,7 +85,7 @@ export const Sidebar = () => {
                   {currRace.users.judges.map((judge, index) => {
                     return (
                       <Link
-                        to={`/user/edit/${judge}`}
+                        to={`/users/${judge}/edit`}
                         className='pill judge'
                         key={index}
                       >
@@ -101,7 +101,7 @@ export const Sidebar = () => {
                   {legData.map((leg, index) => {
                     return (
                       <Link
-                        to={`/leg/edit/${index + 1}`}
+                        to={`/legs/${index + 1}/edit`}
                         className='pill leg'
                         key={index}
                       >

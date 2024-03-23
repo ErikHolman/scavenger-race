@@ -18,7 +18,7 @@ export const UserView = () => {
             <UserCard data={wholeList[person]} key={currentUsers[index]} />
           ))}
         </div>
-        <AddElement type='user' />
+        <AddElement type='users' />
       </div>
       <div className='footer'>
         <Link to={`/race/builder`}>BACK</Link>

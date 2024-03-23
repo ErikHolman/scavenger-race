@@ -10,7 +10,7 @@ export const UserCard = ({ data }) => {
       )}
       <div className='user-data'>
         <div className='user-id'>User ID - {data.id}</div>
-        <Link className='user-name' to={`/user/edit/${data.id}`}>
+        <Link className='user-name' to={`/users/${data.id}/edit`}>
           {data.first_name} {data.last_name}
         </Link>
         <div className='role-header'>
@@ -23,14 +23,14 @@ export const UserCard = ({ data }) => {
             data.roles.map((assignedRole: number, index: number) => {
               <Link
                 className='role-pill'
-                to={`/role/${assignedRole}`}
+                to={`/roles/${assignedRole}`}
                 key={index}
               >
                 {userRole[assignedRole]}
               </Link>;
             })}
         </div>
-        <Link className='user-kill' to={`/user/kill/${data.id}`}>
+        <Link className='user-kill' to={`/users/${data.id}/delete/`}>
           X
         </Link>
       </div>

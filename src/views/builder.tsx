@@ -15,7 +15,7 @@ export const Builder = () => {
         <Link to={`/`} className='footer-buttons'>
           Logout
         </Link>
-        <Link to={`/race/racer/:racerId`} className='footer-buttons'>
+        <Link to={`/race/:racerId/:raceLocation`} className='footer-buttons'>
           Join the race!
         </Link>
         <Link to={`/race/spectator/`} className='footer-buttons'>

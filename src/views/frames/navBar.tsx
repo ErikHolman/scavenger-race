@@ -8,18 +8,18 @@ export const NavBar = () => {
   const activeRoleKey = Object.keys(Roles);
 
   const [menuItems, setMenuItems] = useState({
-    'All Users': { children: [], visible: false, url: '/user/list' },
+    'All Users': { children: [], visible: false, url: '/users/' },
     'All Roles': {
       children: [...activeRoleKey],
       visible: false,
-      url: '/role/list',
+      url: '/roles/',
     },
     'All Legs': {
       children: ['leg 1', 'leg 2'],
       visible: false,
-      url: '/leg/list',
+      url: '/legs/',
     },
-    'All Tasks': { children: [], visible: false, url: '/task/list' },
+    'All Tasks': { children: [], visible: false, url: '/tasks/' },
   });
 
   const menuItemTitles = Object.keys(menuItems);

@@ -9,7 +9,10 @@ type Props = { taskType: string; taskData: { taskId: string } };
 
 export const Task = (props: Props) => {
   return (
-    <Link className='task-edit-link' to={`/task/edit/${props.taskData.taskId}`}>
+    <Link
+      className='task-edit-link'
+      to={`/tasks/${props.taskData.taskId}/edit`}
+    >
       <div className='task-id'>Task #{props.taskData.taskId}</div>
       {props.taskType == 'road' && <RoadBlock data={props.taskData} />}
       {props.taskType == 'detour' && <Detour data={props.taskData} />}
