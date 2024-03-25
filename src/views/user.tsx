@@ -5,7 +5,7 @@ import { AddElement } from '../components/user/addElementButton';
 import './scss/user.scss';
 
 export const UserView = () => {
-  const wholeList = UserList[0];
+  const wholeList: object = UserList[0];
   const currentUsers = Object.keys(wholeList);
 
   return (
@@ -14,14 +14,14 @@ export const UserView = () => {
       <div className='user-view'>
         <div className='user-count'>There are {currentUsers.length} Users</div>
         <div className='user-list'>
-          {currentUsers.map((person, index) => (
+          {currentUsers.map((person: string, index: number) => (
             <UserCard data={wholeList[person]} key={currentUsers[index]} />
           ))}
         </div>
-        <AddElement type='users' />
+        <AddElement type='user' />
       </div>
       <div className='footer'>
-        <Link to={`/race/builder`}>BACK</Link>
+        <Link to={`/race/builder`}>Back</Link>
       </div>
     </div>
   );
