@@ -52,7 +52,7 @@ export const Login = () => {
             <button disabled type='submit' onClick={handleClick}>
               JOIN YOUR RACE
             </button>
-            <Link to={`race/builder`}>Dev Skip Login</Link>
+            <Link to={`race/`}>Dev Skip Login</Link>
           </div>
         </form>
         <div className='login-issue'>{error}</div>

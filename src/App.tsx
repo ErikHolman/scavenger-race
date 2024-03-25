@@ -1,12 +1,10 @@
 import './App.css';
 import { Login } from './views/login';
+import { RaceAdmin } from './views/admin';
 
 function App() {
-  return (
-    <>
-      <Login />
-    </>
-  );
+  const isAuthenticated = false;
+  return <>{isAuthenticated ? <RaceAdmin /> : <Login />}</>;
 }
 
 export default App;

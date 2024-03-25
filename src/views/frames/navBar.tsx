@@ -4,86 +4,76 @@ import { Roles } from '../../types/users';
 import './navBar.scss';
 // import raceData from '../_sampleData/sampleRace.json';
 
+type Event = {
+  target: {
+    id: string;
+  };
+};
+
 export const NavBar = () => {
   const activeRoleKey = Object.keys(Roles);
 
   const [menuItems, setMenuItems] = useState({
-    'All Users': { children: [], visible: false, url: '/users/' },
+    'Race Builder': {
+      children: [],
+      visible: false,
+      url: '/race/builder',
+      active: false,
+    },
+    'All Users': {
+      children: [],
+      visible: false,
+      url: '/race/users/',
+      active: false,
+    },
     'All Roles': {
       children: [...activeRoleKey],
       visible: false,
-      url: '/roles/',
+      url: '/race/roles/',
+      active: false,
     },
     'All Legs': {
       children: ['leg 1', 'leg 2'],
       visible: false,
-      url: '/legs/',
+      url: '/race/legs/',
+      active: false,
     },
-    'All Tasks': { children: [], visible: false, url: '/tasks/' },
+    'All Tasks': {
+      children: [],
+      visible: false,
+      url: '/race/tasks/',
+      active: false,
+    },
   });
 
   const menuItemTitles = Object.keys(menuItems);
   const menuItemContent = Object.values(menuItems);
 
-  // const onHover = (item) => {
-  //   console.log(menuItems[item]);
-  //   let currentState = menuItems[item].visible;
+  const handleClick = (e: Event) => {
+    const currentItem = e.target.id.toString();
+    console.warn(currentItem);
 
-  //   setMenuItems((menuItems[item].visible = !currentState));
-  // };
+    return currentItem;
+  };
 
   return (
     <div className='nav-bar'>
       <div className='buttons'>
-        {menuItemTitles.map((item, index: number) => {
+        {menuItemTitles.map((item, index) => {
           return (
             <>
               <Link
                 to={`${menuItemContent[index].url}`}
                 key={`${item}-button`}
-                className='menu-item'
+                className={`menu-item ${item.active ? 'active' : ''}`}
+                onClick={handleClick}
+                id={item}
               >
                 {item}
-                {menuItemContent[index].children.length > 0 && (
-                  <div
-                    key={`${index}`}
-                    className={`drop-down ${
-                      menuItemContent[index].visible ? 'open' : 'closed'
-                    }`}
-                  >
-                    {menuItemContent[index].children.map((listItem) => {
-                      return <div className='drop-down-item'>{listItem}</div>;
-                    })}
-                  </div>
-                )}
               </Link>
             </>
           );
         })}
-        {/* 
-        <div className='menu-item'>
-          <div onClick={onHover}>Roles</div>
-          <div className={`drop-down ${dropVisible ? 'open' : ''}`}>
-            {activeRoleKey.map(
-              (eachRole, index) => {
-                return (
-                  <>
-                    <div className='drop-down-item' key={index}>
-                      {eachRole}
-                    </div>
-                  </>
-                );
-              },
-              [Roles]
-            )}
-          </div>
-        </div>
-        <div className='menu-item'>
-          <div onClick={onHover}>Legs</div>
-          <div className={`drop-down ${dropVisible ? 'open' : ''}`}>
-            <div className='drop-down-item'>A leg</div>
-          </div>
-        </div> */}
       </div>
     </div>
   );
