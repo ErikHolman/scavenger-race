@@ -1,7 +1,7 @@
-import { UserCard } from '../components/user/userCard';
-import UserList from '../_sampleData/sampleUsers.json';
-import { AddElement } from '../components/user/addElementButton';
-import './scss/user.scss';
+import { UserCard } from '../../components/user/userCard';
+import UserList from '../../_sampleData/sampleUsers.json';
+import { AddElement } from '../../components/user/addElementButton';
+import '../scss/user.scss';
 
 export const UserView = () => {
   const wholeList: object = UserList[0];

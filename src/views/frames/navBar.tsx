@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Roles } from '../../types/users';
+import { Roles } from '../../types/roles';
 import './navBar.scss';
 // import raceData from '../_sampleData/sampleRace.json';
 
@@ -13,63 +13,66 @@ type Event = {
 export const NavBar = () => {
   const activeRoleKey = Object.keys(Roles);
 
-  const [menuItems, setMenuItems] = useState({
-    'Race Builder': {
+  const menuItems = [
+    {
+      name: 'Admin',
+      children: [],
+      visible: false,
+      url: '/race/admin',
+      active: false,
+    },
+    {
+      name: 'Builder',
       children: [],
       visible: false,
       url: '/race/builder',
       active: false,
     },
-    'All Users': {
+    {
+      name: 'Users',
       children: [],
       visible: false,
       url: '/race/users/',
       active: false,
     },
-    'All Roles': {
+    {
+      name: 'Roles',
       children: [...activeRoleKey],
       visible: false,
       url: '/race/roles/',
       active: false,
     },
-    'All Legs': {
+    {
+      name: 'Legs',
       children: ['leg 1', 'leg 2'],
       visible: false,
       url: '/race/legs/',
       active: false,
     },
-    'All Tasks': {
+    {
+      name: 'Tasks',
       children: [],
       visible: false,
       url: '/race/tasks/',
       active: false,
     },
-  });
+  ];
 
-  const menuItemTitles = Object.keys(menuItems);
-  const menuItemContent = Object.values(menuItems);
-
-  const handleClick = (e: Event) => {
-    const currentItem = e.target.id.toString();
-    console.warn(currentItem);
-
-    return currentItem;
-  };
+  const [menuBar, setMenuBar] = useState(menuItems);
 
   return (
     <div className='nav-bar'>
       <div className='buttons'>
-        {menuItemTitles.map((item, index) => {
+        {menuBar.map((item, index) => {
           return (
             <>
               <Link
-                to={`${menuItemContent[index].url}`}
+                to={`${menuBar[index].url}`}
                 key={`${item}-button`}
                 className={`menu-item ${item.active ? 'active' : ''}`}
-                onClick={handleClick}
-                id={item}
+                id={item.name}
               >
-                {item}
+                {item.name}
               </Link>
             </>
           );

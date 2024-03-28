@@ -1,14 +1,9 @@
+import { Roles } from './roles';
+
 export interface IUser {
-  id: number;
+  id: string;
   first_name: string;
   last_name: string;
   roles: Roles;
-}
-
-export enum Roles {
-  'admin',
-  'driver',
-  'judge',
-  'racer',
-  'spectator',
+  team: string;
 }

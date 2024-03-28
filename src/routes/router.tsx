@@ -1,9 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App.tsx';
 import ErrorPage from '../error-page.tsx';
-import { Builder } from '../views/builder.tsx';
-import { UserView } from '../views/user.tsx';
-import { RaceAdmin } from '../views/admin.tsx';
+import { Landing } from '../views/landing.tsx';
+import { Builder } from '../views/builder/builder.tsx';
+import { UserView } from '../views/user/users.tsx';
+import { RaceAdmin } from '../views/admin/admin.tsx';
 
 export const router = createBrowserRouter([
   {
@@ -15,8 +16,9 @@ export const router = createBrowserRouter([
   // Race admin view routes
   {
     path: `/race/`,
-    element: <RaceAdmin />,
+    element: <Landing />,
     children: [
+      { path: 'admin/', element: <RaceAdmin /> },
       { path: 'builder/', element: <Builder /> },
       // User routes
       { path: 'users/', element: <UserView /> },
