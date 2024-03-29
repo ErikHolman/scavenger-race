@@ -14,3 +14,34 @@
 #root .horz-spacer {
   padding: 0 0 0 1em;
 }
+
+#root .frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 90vh;
+  width: 90vw;
+}
+
+#root .frame h3 {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+#root .frame .content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #f6f6f6;
+  overflow: hidden;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#root .frame .content .view {
+  overflow: scroll;
+  display: flex;
+  flex-direction: row;
+}

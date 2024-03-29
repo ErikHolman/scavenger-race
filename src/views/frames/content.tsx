@@ -13,7 +13,9 @@ export const Content = () => {
           For this release there is only 1 trackable race.
         </span>
       ) : (
-        <Outlet />
+        <div className='view'>
+          <Outlet />
+        </div>
       )}
     </div>
   );
