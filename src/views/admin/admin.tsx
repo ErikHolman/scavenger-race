@@ -1,7 +1,8 @@
 import './admin.scss';
 import RaceData from '../../_sampleData/sampleRace.json';
 import { useState } from 'react';
-import RaceUsers from '../../_sampleData/sampleUsers.json';
+import allUsers from '../../_sampleData/sampleUsers.json';
+import { AddElement } from '../../components/addElementButton';
 
 type Event = {
   target: {
@@ -9,11 +10,47 @@ type Event = {
   };
 };
 
-export const RaceAdmin = () => {
+type Props = {
+  raceId: number | undefined;
+};
+
+export const RaceAdmin = (props: Props) => {
   const [currentRace, setCurrentRace] = useState(0);
   const [error, setError] = useState('');
 
+  // if (props.raceId === -1 || props.raceId === undefined) {
+  //   const count = RaceData.length;
+  //   setCurrentRace(count);
+  //   console.log('raceId undefined or -1', props.raceId, currentRace);
+  // } else {
+  //   setCurrentRace(props.raceId);
+  //   console.log('raceId', props.raceId);
+  // }
+
   const currentRaceObject = RaceData[currentRace];
+
+  const userList = allUsers[0];
+  const drivers = [];
+  const racers = [];
+  const judges = [];
+
+  const populateDrivers = () => {
+    currentRaceObject.users.drivers.map((driver) => {
+      drivers.push(userList[driver].first_name);
+    });
+  };
+
+  const populateRacers = () => {
+    currentRaceObject.users.racers.map((racer) => {
+      racers.push(userList[racer].first_name);
+    });
+  };
+
+  const populateJudges = () => {
+    currentRaceObject.users.racers.map((judge) => {
+      judges.push(userList[judge].first_name);
+    });
+  };
 
   const [raceForm, setRaceForm] = useState({
     name: currentRaceObject.name,
@@ -21,14 +58,15 @@ export const RaceAdmin = () => {
     time: currentRaceObject.raceStart,
     legs: [...currentRaceObject.legs],
     users: {
-      drivers: [...currentRaceObject.users.drivers],
-      racers: [...currentRaceObject.users.racers],
-      judges: [...currentRaceObject.users.judges],
+      drivers: drivers,
+      racers: racers,
+      judges: judges,
     },
   });
 
   const setRace = (event: Event) => {
     setCurrentRace(event.target.id);
+    setRaceForm({ ...raceForm });
   };
 
   const handleFormUpdate = (field, value) => {
@@ -37,6 +75,10 @@ export const RaceAdmin = () => {
       [field]: [value],
     });
   };
+
+  populateDrivers();
+  populateJudges();
+  populateRacers();
 
   return (
     <>
@@ -54,6 +96,7 @@ export const RaceAdmin = () => {
               </div>
             );
           })}
+          <AddElement type='race' />
         </div>
         <div className='note'>
           <code>Alpha Release</code>
@@ -138,7 +181,7 @@ export const RaceAdmin = () => {
                 <input
                   id='racers'
                   type='text'
-                  placeholder=''
+                  placeholder={raceForm.users.racers}
                   value=''
                   onChange={handleFormUpdate}
                 ></input>
@@ -151,7 +194,7 @@ export const RaceAdmin = () => {
                 <input
                   id='judges'
                   type='text'
-                  placeholder=''
+                  placeholder={raceForm.users.judges}
                   value=''
                   onChange={handleFormUpdate}
                 ></input>

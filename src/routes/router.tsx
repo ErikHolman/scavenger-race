@@ -19,6 +19,7 @@ export const router = createBrowserRouter([
     element: <Landing />,
     children: [
       { path: 'admin/', element: <RaceAdmin /> },
+      { path: 'new/:raceId', element: <RaceAdmin /> },
       { path: 'builder/', element: <Builder /> },
       // User routes
       { path: 'users/', element: <UserView /> },

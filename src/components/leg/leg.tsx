@@ -1,7 +1,7 @@
 // this is the leg component, it contains tasks
 import { Task } from '../task/task';
 import './leg.scss';
-import { AddElement } from '../user/addElementButton';
+import { AddElement } from '../addElementButton';
 
 export const Leg = (props) => {
   const localTasks: {

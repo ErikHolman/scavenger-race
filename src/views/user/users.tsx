@@ -1,6 +1,6 @@
 import { UserCard } from '../../components/user/userCard';
 import UserList from '../../_sampleData/sampleUsers.json';
-import { AddElement } from '../../components/user/addElementButton';
+import { AddElement } from '../../components/addElementButton';
 import '../scss/user.scss';
 
 export const UserView = () => {
