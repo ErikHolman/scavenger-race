@@ -5,6 +5,7 @@ import { Landing } from '../views/landing.tsx';
 import { Builder } from '../views/builder/builder.tsx';
 import { UserView } from '../views/user/users.tsx';
 import { RaceAdmin } from '../views/admin/admin.tsx';
+import { RoleView } from '../views/role/roles.tsx';
 
 export const router = createBrowserRouter([
   {
@@ -44,7 +45,7 @@ export const router = createBrowserRouter([
       { path: `legs/:legId/delete`, element: <div>Remove leg page</div> },
       { path: `legs/new/`, element: <div>New leg page</div> },
       // Role route
-      { path: `roles/`, element: <div>All roles page</div> },
+      { path: `roles/`, element: <RoleView /> },
       { path: `roles/:roleId`, element: <div>Specific role page</div> },
     ],
   },

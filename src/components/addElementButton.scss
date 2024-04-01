@@ -73,3 +73,22 @@
     }
   }
 }
+
+.new-role {
+  &:hover {
+    width: 100px;
+    justify-content: flex-start;
+    padding-left: 1em;
+    padding-right: 1em;
+    transition: all 0.05s;
+    color: white;
+
+    &::after {
+      content: 'ADD ROLE';
+      font-size: 0.8em;
+      width: fit-content;
+      opacity: 1;
+      padding-left: 0.4em;
+    }
+  }
+}
