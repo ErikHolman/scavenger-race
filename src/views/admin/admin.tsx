@@ -29,7 +29,7 @@ export const RaceAdmin = (props: Props) => {
 
   const currentRaceObject = RaceData[currentRace];
 
-  const userList = allUsers[0];
+  const userList = allUsers;
   const drivers = [];
   const racers = [];
   const judges = [];

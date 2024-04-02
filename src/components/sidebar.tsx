@@ -19,7 +19,7 @@ export const Sidebar = () => {
     setSideBarVisible(true);
   }
 
-  const userList = allUsers[0];
+  const userList = allUsers;
 
   return (
     <>

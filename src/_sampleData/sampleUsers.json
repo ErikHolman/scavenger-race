@@ -1,60 +1,58 @@
 [
   {
-    "1": {
-      "id": "1",
-      "first_name": "jessica",
-      "last_name": "holman",
-      "roles": [0, 1, 2],
-      "image": ""
-    },
-    "2": {
-      "id": "2",
-      "first_name": "erik",
-      "last_name": "HoLmaN",
-      "roles": [0, 1, 2],
-      "image": ""
-    },
-    "3": {
-      "id": "3",
-      "first_name": "koko",
-      "last_name": "holman",
-      "roles": [2, 3],
-      "image": ""
-    },
-    "4": {
-      "id": "4",
-      "first_name": "Spectator1",
-      "last_name": "watching",
-      "roles": [],
-      "image": ""
-    },
-    "5": {
-      "id": "1",
-      "first_name": "jessica",
-      "last_name": "holman",
-      "roles": [0, 1, 2],
-      "image": ""
-    },
-    "6": {
-      "id": "2",
-      "first_name": "erik",
-      "last_name": "HoLmaN",
-      "roles": [0, 1, 2],
-      "image": ""
-    },
-    "7": {
-      "id": "3",
-      "first_name": "koko",
-      "last_name": "holman",
-      "roles": [2, 3],
-      "image": ""
-    },
-    "8": {
-      "id": "4",
-      "first_name": "Spectator1",
-      "last_name": "watching",
-      "roles": [],
-      "image": ""
-    }
+    "id": "1",
+    "first_name": "jessica",
+    "last_name": "holman",
+    "roles": [0, 1, 2],
+    "image": ""
+  },
+  {
+    "id": "2",
+    "first_name": "erik",
+    "last_name": "HoLmaN",
+    "roles": [0, 1, 2],
+    "image": ""
+  },
+  {
+    "id": "3",
+    "first_name": "koko",
+    "last_name": "holman",
+    "roles": [2, 3, 75],
+    "image": ""
+  },
+  {
+    "id": "4",
+    "first_name": "Spectator1",
+    "last_name": "watching",
+    "roles": [4],
+    "image": ""
+  },
+  {
+    "id": "5",
+    "first_name": "jessica 2",
+    "last_name": "holman",
+    "roles": [1, 2, 50],
+    "image": ""
+  },
+  {
+    "id": "6",
+    "first_name": "erik 2",
+    "last_name": "HoLmaN",
+    "roles": [0, 1, 2],
+    "image": ""
+  },
+  {
+    "id": "7",
+    "first_name": "koko 2",
+    "last_name": "holman",
+    "roles": [2, 3],
+    "image": ""
+  },
+  {
+    "id": "8",
+    "first_name": "Spectator2",
+    "last_name": "watching",
+    "roles": [4],
+    "image": ""
   }
 ]

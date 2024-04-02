@@ -4,7 +4,7 @@ import { AddElement } from '../../components/addElementButton';
 import './user.scss';
 
 export const UserView = () => {
-  const wholeList: object = UserList[0];
+  const wholeList: object = UserList;
   const currentUsers = Object.keys(wholeList);
 
   return (

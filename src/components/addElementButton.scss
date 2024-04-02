@@ -74,9 +74,9 @@
   }
 }
 
-.new-role {
+.new-user-role {
   &:hover {
-    width: 100px;
+    width: 170px;
     justify-content: flex-start;
     padding-left: 1em;
     padding-right: 1em;
@@ -84,7 +84,7 @@
     color: white;
 
     &::after {
-      content: 'ADD ROLE';
+      content: 'ADD USER TO ROLE';
       font-size: 0.8em;
       width: fit-content;
       opacity: 1;
