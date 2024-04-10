@@ -22,12 +22,12 @@ export const ViewSideBar = ({ children }) => {
             <>
               <div className='top'>
                 <button onClick={closeSidebar}>👈</button>
+                <div className='note'>
+                  <code>Alpha Release</code>
+                  <div>Currently, changes will not persist.</div>
+                </div>
               </div>
               {children}
-              <div className='note'>
-                <code>Alpha Release</code>
-                <div>Currently, changes will not persist.</div>
-              </div>
             </>
           )}
         </div>

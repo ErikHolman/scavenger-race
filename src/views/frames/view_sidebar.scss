@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   padding: 10px 10px 0 10px;
-  overflow-y: hidden;
+  height: 98%;
   & button {
     border: 0;
     background-color: #f6f6;
@@ -23,7 +23,7 @@
 }
 
 .opened-sidebar {
-  flex-grow: 0.3 !important;
+  flex-grow: 0.3;
   overflow-y: scroll;
   & .top {
     display: flex;
@@ -36,7 +36,7 @@
     border: 1px solid #333333;
     background-color: rgba(250, 150, 150, 0.3);
     border-radius: 0.25em;
-    margin: 1em;
+    margin: 0 1em;
     padding: 1em;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.8);
     & code {
@@ -48,8 +48,10 @@
       border-radius: 1em;
       font-size: smaller;
       display: flex;
+      justify-self: flex-end;
       justify-content: center;
       align-items: center;
+      text-align: center;
     }
     & div {
       display: flex;

@@ -1,49 +1,54 @@
-.user-view {
+.user-overview {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  background-color: #f6f6f6;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+  flex-wrap: wrap;
+  justify-content: space-between;
   height: 100%;
+  width: 100%;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
 
-  & .sidebar {
+  & .closed-sidebar {
     display: flex;
-    flex-direction: column;
-    width: 15%;
-    height: 90%;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    & .user-manage {
+    flex-grow: 0;
+  }
+
+  & .opened-sidebar {
+    flex-grow: 0.4;
+    overflow-y: scroll;
+
+    & .user-sidebar-content {
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: flex-end;
-      padding: 0 1em;
-      padding-top: 1em;
-      border-top: 1px solid red;
-      width: 50%;
-      & .user-count {
-        margin-bottom: 20px;
-        margin-top: 5px;
-        text-align: center;
-        font-weight: 500;
+      align-items: center;
+      height: 100%;
+      & .user-manage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 1em;
+        padding-top: 1em;
+        & .user-count {
+          margin-bottom: 20px;
+          margin-top: 5px;
+          text-align: center;
+          font-weight: 500;
+        }
       }
     }
   }
 
   & .user-list {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-    width: 100%;
-    height: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding-left: 1em;
+    padding-right: 1em;
     overflow: scroll;
+    height: 100%;
     & .user-cards {
       display: flex;
       flex-direction: row;
@@ -51,4 +56,10 @@
       padding: 1em;
     }
   }
+}
+
+.user-overview > * {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
 }

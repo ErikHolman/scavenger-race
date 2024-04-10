@@ -8,7 +8,14 @@
   border-top: 1px solid #333;
   border-bottom: 1px solid #333;
 
+  & .closed-sidebar {
+    display: flex;
+    flex-grow: 0;
+  }
+
   & .opened-sidebar {
+    flex-grow: 0.4;
+    overflow-y: scroll;
     & .race-sidebar {
       display: flex;
       flex-direction: column;
