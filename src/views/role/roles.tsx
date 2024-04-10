@@ -2,6 +2,7 @@ import './role.scss';
 import allUsers from '../../_sampleData/sampleUsers.json';
 import { Roles as userRole } from '../../types/roles';
 import { AddElement } from '../../components/addElementButton';
+import { ViewSideBar } from '../frames/view_sideBar';
 import { useState } from 'react';
 
 export const RoleView = () => {
@@ -83,8 +84,8 @@ export const RoleView = () => {
   getUserCount();
 
   return (
-    <div className='role-view'>
-      <div className='sidebar'>
+    <div className='role-overview'>
+      <ViewSideBar>
         <div className='list-roles'>
           {stringRoles.map((role, index) => {
             return (
@@ -105,7 +106,7 @@ export const RoleView = () => {
             return <div id='broken'>{broken}</div>;
           })}
         </div>
-      </div>
+      </ViewSideBar>
       <div className='content-roles'>
         {currentRole.length > 0 ? (
           <div className='role-selected'>
