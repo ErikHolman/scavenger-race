@@ -98,13 +98,6 @@ export const RaceAdmin = (props: Props) => {
           })}
           <AddElement type='race' />
         </div>
-        <div className='note'>
-          <code>Alpha Release</code>
-          <div>
-            The first item in the list above is the only Race Object that is
-            editible. Currently, changes do not persist.
-          </div>
-        </div>
       </div>
       <div className='admin-form'>
         <h2>Current Race Data</h2>
