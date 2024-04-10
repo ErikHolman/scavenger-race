@@ -2,6 +2,7 @@ import './admin.scss';
 import RaceData from '../../_sampleData/sampleRace.json';
 import { useState } from 'react';
 import allUsers from '../../_sampleData/sampleUsers.json';
+import { ViewSideBar } from '../frames/view_sideBar';
 import { AddElement } from '../../components/addElementButton';
 
 type Event = {
@@ -81,8 +82,8 @@ export const RaceAdmin = (props: Props) => {
   populateRacers();
 
   return (
-    <>
-      <div className='side'>
+    <div className='admin-overview'>
+      <ViewSideBar>
         <div className='list-races'>
           {RaceData.map((race, index) => {
             return (
@@ -98,7 +99,7 @@ export const RaceAdmin = (props: Props) => {
           })}
           <AddElement type='race' />
         </div>
-      </div>
+      </ViewSideBar>
       <div className='admin-form'>
         <h2>Current Race Data</h2>
         <form>
@@ -207,6 +208,6 @@ export const RaceAdmin = (props: Props) => {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 };
