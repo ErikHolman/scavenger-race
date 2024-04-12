@@ -15,7 +15,7 @@ $ npm run dev
 
 ---
 
-- [ ] Componitize Sidebar
+- [x] ~~Componitize Sidebar~~ - 4/11/24
 - [ ] Legs view
 - [ ] Tasks view
 - [ ] Authentication
