@@ -1,18 +1,11 @@
 import './view_sidebar.scss';
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../state/store';
+import { toggleVisiblity } from '../../state/sidebar/sidebarSlice';
 
 export const ViewSideBar = ({ children }) => {
-  // local state
-  const [sideBarVisible, setSideBarVisible] = useState(true);
-
-  // local non-state
-
-  function closeSidebar() {
-    setSideBarVisible(false);
-  }
-  function openSidebar() {
-    setSideBarVisible(true);
-  }
+  const sideBarVisible = useSelector((state: RootState) => state.sidebar.value);
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -21,7 +14,7 @@ export const ViewSideBar = ({ children }) => {
           {sideBarVisible && (
             <>
               <div className='top'>
-                <button onClick={closeSidebar}>👈</button>
+                <button onClick={() => dispatch(toggleVisiblity())}>👈</button>
                 <div className='note'>
                   <code>Alpha Release</code>
                   <div>Currently, changes will not persist.</div>
@@ -34,7 +27,7 @@ export const ViewSideBar = ({ children }) => {
       )}
       {!sideBarVisible && (
         <div className='closed-sidebar'>
-          <button onClick={openSidebar}>👉</button>
+          <button onClick={() => dispatch(toggleVisiblity())}>👉</button>
         </div>
       )}
     </>
