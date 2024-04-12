@@ -33,7 +33,6 @@ export const NavBar = () => {
     <div className='nav-bar'>
       <div className='buttons-container'>
         {menuItems.map((item, index) => {
-          console.log(item);
           return (
             <>
               <NavLink
