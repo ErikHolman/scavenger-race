@@ -34,19 +34,17 @@ export const NavBar = () => {
       <div className='buttons-container'>
         {menuItems.map((item, index) => {
           return (
-            <>
-              <NavLink
-                to={`${menuItems[index].url}`}
-                key={`${item.name.toLowerCase()}-button`}
-                className={({ isActive }) =>
-                  isActive ? 'menu-item active' : 'menu-item'
-                }
-                id={item.name.toLowerCase()}
-                state={index}
-              >
-                {item.name}
-              </NavLink>
-            </>
+            <NavLink
+              to={`${menuItems[index].url}`}
+              key={`${item.name.toLowerCase()}-button`}
+              className={({ isActive }) =>
+                isActive ? 'menu-item active' : 'menu-item'
+              }
+              id={item.name.toLowerCase()}
+              state={index}
+            >
+              {item.name}
+            </NavLink>
           );
         })}
       </div>
