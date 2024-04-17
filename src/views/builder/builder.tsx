@@ -22,7 +22,7 @@ type RaceData = {
 export const Builder = () => {
   const currRace: RaceData = raceData[0];
   const userList = allUsers;
-  // todo refactor usernames in sidebar, not currently linking based on userId
+  // TODO refactor usernames in sidebar, not currently linking based on userId
   return (
     <div className='race-overview'>
       <ViewSideBar>
