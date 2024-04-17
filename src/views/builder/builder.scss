@@ -7,6 +7,7 @@
   width: 100%;
   border-top: 1px solid #333;
   border-bottom: 1px solid #333;
+  overflow: hidden;
 
   & .closed-sidebar {
     display: flex;
@@ -110,6 +111,7 @@
     overflow: scroll;
     height: auto;
     min-inline-size: 50%;
+    height: 97%;
   }
 }
 
