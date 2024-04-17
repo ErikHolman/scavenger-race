@@ -6,10 +6,23 @@ import allUsers from '../../_sampleData/sampleUsers.json';
 import raceData from '../../_sampleData/sampleRace.json';
 import './builder.scss';
 
-export const Builder = () => {
-  const currRace = raceData[0];
-  const userList = allUsers;
+type RaceData = {
+  id: number;
+  name: string;
+  raceDate: string;
+  raceStart: string;
+  legs: Array<string>;
+  users: {
+    drivers: Array<string>;
+    racers: Array<string>;
+    judges: Array<string>;
+  };
+};
 
+export const Builder = () => {
+  const currRace: RaceData = raceData[0];
+  const userList = allUsers;
+  // todo refactor usernames in sidebar, not currently linking based on userId
   return (
     <div className='race-overview'>
       <ViewSideBar>
@@ -91,7 +104,7 @@ export const Builder = () => {
                     className='pill leg'
                     key={index}
                   >
-                    leg {index + 1}
+                    leg {leg.legId}
                   </Link>
                 );
               })}

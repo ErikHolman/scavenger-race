@@ -4,19 +4,25 @@ import { Roles as userRole } from '../../types/roles';
 import { AddElement } from '../../components/addElementButton';
 import { ViewSideBar } from '../frames/view_sideBar';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+type brokenUser = {
+  id: string;
+  first_name: string;
+};
 
 export const RoleView = () => {
   const stringRoles = [];
   // define active seleted role
   const [currentRole, setCurrentRole] = useState('');
   // set role arrays
-  const userAdmin = [];
-  const userDriver = [];
-  const userJudge = [];
-  const userRacer = [];
-  const userSpectator = [];
-  const userBrokenRole = [];
-  let userRoleCounts = [];
+  const userAdmin: Array<string> = [];
+  const userDriver: Array<string> = [];
+  const userJudge: Array<string> = [];
+  const userRacer: Array<string> = [];
+  const userSpectator: Array<string> = [];
+  const userBrokenRole: Array<brokenUser> = [];
+  let userRoleCounts: Array<string> = [];
 
   // create an array of all role tyupes
   for (const role of Object.keys(userRole)) {
@@ -51,7 +57,7 @@ export const RoleView = () => {
               userSpectator.push(user.first_name);
               break;
             default:
-              userBrokenRole.push(user.first_name);
+              userBrokenRole.push(user);
           }
         });
       }
@@ -64,7 +70,8 @@ export const RoleView = () => {
     userBrokenRole.sort();
   };
 
-  const setRole = (event: Event) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const setRole = (event: any) => {
     const id = event.target.id;
     const initCap = id.replace(id.charAt(0), id.charAt(0).toUpperCase());
     setCurrentRole(initCap);
@@ -72,11 +79,11 @@ export const RoleView = () => {
 
   const getUserCount = () => {
     userRoleCounts = [
-      userAdmin.length,
-      userDriver.length,
-      userJudge.length,
-      userRacer.length,
-      userSpectator.length,
+      userAdmin.length.toString(),
+      userDriver.length.toString(),
+      userJudge.length.toString(),
+      userRacer.length.toString(),
+      userSpectator.length.toString(),
     ];
   };
 
@@ -102,8 +109,17 @@ export const RoleView = () => {
         </div>
         <div className='broken-roles'>
           These users have fake roles:
-          {userBrokenRole.map((broken) => {
-            return <div id='broken'>{broken}</div>;
+          {userBrokenRole.map((broken, index) => {
+            return (
+              <Link
+                to={`/users/${broken.id}/edit`}
+                id='broken'
+                className='role-item'
+                key={index}
+              >
+                {broken.first_name}
+              </Link>
+            );
           })}
         </div>
       </ViewSideBar>
