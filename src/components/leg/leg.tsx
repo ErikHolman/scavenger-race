@@ -3,40 +3,26 @@ import { Task } from '../task/task';
 import './leg.scss';
 import { AddElement } from '../addElementButton';
 
-export const Leg = (props) => {
-  const localTasks: {
-    taskId: string;
-    name: string;
-    type: string;
-    challenge: string;
-    instruction: string;
-    intro: {
-      challenge: string;
-      instruction: string;
-    };
-    detourA: {
-      title: string;
-      challenge: string;
-      instruction: string;
-    };
-    detourB: {
-      title: string;
-      challenge: string;
-      instruction: string;
-    };
-  }[] = Object.values(props.legData);
+type Props = {
+  legData: { legId: string; name: string; tasks: Array<string> };
+  legNumber: string;
+};
+
+export const Leg = (props: Props) => {
+  const localLeg = Object.values(props.legData.tasks);
 
   return (
     <div className='leg'>
-      <h2>This is Leg #{props.legNumber}.</h2>
       <div>
-        {localTasks.map((task) => {
+        <strong>This is Leg #{props.legNumber}.</strong>
+      </div>
+      <div>"{props.legData.name}"</div>
+      <div>
+        {localLeg.map((task) => {
           return (
-            <>
-              <div key={`card-${task.taskId}`} className='card'>
-                <Task taskType={task.type} taskData={task} />
-              </div>
-            </>
+            <div key={`task-${task}`} className='card'>
+              <Task data={task} />
+            </div>
           );
         })}
       </div>

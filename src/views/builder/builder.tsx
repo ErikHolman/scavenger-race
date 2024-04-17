@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { ViewSideBar } from '../frames/view_sideBar';
 import legData from '../../_sampleData/sampleLegs.json';
 import allUsers from '../../_sampleData/sampleUsers.json';
-
 import raceData from '../../_sampleData/sampleRace.json';
 import './builder.scss';
 
@@ -102,7 +101,9 @@ export const Builder = () => {
       </ViewSideBar>
       <div className='race'>
         {legData.map((leg, index) => {
-          return <Leg legData={leg} legNumber={index + 1} key={index} />;
+          return (
+            <Leg legData={leg} legNumber={(index + 1).toString()} key={index} />
+          );
         })}
       </div>
     </div>

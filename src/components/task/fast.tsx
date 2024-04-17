@@ -1,29 +1,59 @@
 import './fast.scss';
 
-export const Fast = (props) => {
-  const detourText = {
+type Props = {
+  data: {
+    taskId: string;
+    name: string;
+    type: string;
+    challenge?: string;
+    icon?: string;
+    instruction?: string;
+    detourA?: {
+      challenge: string;
+      icon: string;
+      instruction: string;
+      title: string;
+    };
+    detourB?: {
+      challenge: string;
+      icon: string;
+      instruction: string;
+      title: string;
+    };
+    intro?: {
+      challenge: string;
+      instruction: string;
+      icon: string;
+    };
+  };
+};
+
+export const Fast = (props: Props) => {
+  const fastText = {
+    name: `${props.data.name}`,
     challenge: `${props.data.challenge}`,
     instruction: `${props.data.instruction}`,
+    icon: `${props.data.icon}`,
   };
   return (
     <div className='task fast'>
       <div>
-        <strong>{props.data.name}</strong>
+        <strong>{fastText.name}</strong>
       </div>
       <div
         className='challenge'
         dangerouslySetInnerHTML={{
-          __html: `${detourText.challenge}`,
+          __html: `${fastText.challenge}`,
         }}
       />
 
       <div className='instruction'>
-        <div className='icon'>{props.data?.icon}</div>
-        {props.data.instruction.length > 0 && (
+        <div className='icon'>{fastText?.icon}</div>
+        {fastText.instruction.length > 0 && (
           <div
             className='direction'
             dangerouslySetInnerHTML={{
-              __html: `${detourText.instruction}`,
+              __html: `${fastText.instruction}`,
             }}
           />
         )}

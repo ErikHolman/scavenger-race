@@ -1,30 +1,59 @@
 import './roadBlock.scss';
 
-export const RoadBlock = (props) => {
-  const detourText = {
+type Props = {
+  data: {
+    taskId: string;
+    name: string;
+    type: string;
+    challenge?: string;
+    icon?: string;
+    instruction?: string;
+    detourA?: {
+      challenge: string;
+      icon: string;
+      instruction: string;
+      title: string;
+    };
+    detourB?: {
+      challenge: string;
+      icon: string;
+      instruction: string;
+      title: string;
+    };
+    intro?: {
+      challenge: string;
+      instruction: string;
+      icon: string;
+    };
+  };
+};
+
+export const RoadBlock = (props: Props) => {
+  const roadblockText = {
+    name: `${props.data.name}`,
     challenge: `${props.data.challenge}`,
+    icon: `${props.data.icon}`,
     instruction: `${props.data.instruction}`,
   };
-
   return (
     <div className='task road-block'>
       <div>
-        <strong>{props.data.name}</strong>
+        <strong>{roadblockText.name}</strong>
       </div>
       <div
         className='challenge'
         dangerouslySetInnerHTML={{
-          __html: `${detourText.challenge}`,
+          __html: `${roadblockText.challenge}`,
         }}
       />
 
       <div className='instruction'>
-        <div className='icon'>{props.data?.icon}</div>
-        {props.data.instruction.length > 0 && (
+        <div className='icon'>{roadblockText?.icon}</div>
+        {roadblockText.instruction.length > 0 && (
           <div
             className='direction'
             dangerouslySetInnerHTML={{
-              __html: `${detourText.instruction}`,
+              __html: `${roadblockText.instruction}`,
             }}
           />
         )}

@@ -106,10 +106,9 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding: 1em 1em 0 1em;
     overflow: scroll;
-    height: 100%;
+    height: auto;
     min-inline-size: 50%;
   }
 }

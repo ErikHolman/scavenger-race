@@ -1,21 +1,52 @@
 import './detour.scss';
 
-export const Detour = (props) => {
+type Props = {
+  data: {
+    taskId: string;
+    name: string;
+    type: string;
+    challenge?: string;
+    icon?: string;
+    instruction?: string;
+    detourA?: {
+      challenge: string;
+      icon: string;
+      instruction: string;
+      title: string;
+    };
+    detourB?: {
+      challenge: string;
+      icon: string;
+      instruction: string;
+      title: string;
+    };
+    intro?: {
+      challenge: string;
+      instruction: string;
+      icon: string;
+    };
+  };
+};
+
+export const Detour = (props: Props) => {
   const detourText = {
     title: `${props.data.name}`,
     intro: {
-      challenge: `${props.data.intro.challenge}`,
-      instruction: `${props.data.intro.instruction}`,
+      challenge: `${props.data.intro!.challenge}`,
+      instruction: `${props.data.intro!.instruction}`,
+      icon: `${props.data.intro!.icon}`,
     },
     detourA: {
-      title: `${props.data.detourA.title}`,
-      challenge: `${props.data.detourA.challenge}`,
-      instruction: `${props.data.detourA.instruction}`,
+      title: `${props.data.detourA!.title}`,
+      challenge: `${props.data.detourA!.challenge}`,
+      instruction: `${props.data.detourA!.instruction}`,
+      icon: `${props.data.detourA!.icon}`,
     },
     detourB: {
-      title: `${props.data.detourB.title}`,
-      challenge: `${props.data.detourB.challenge}`,
-      instruction: `${props.data.detourB.instruction}`,
+      title: `${props.data.detourB!.title}`,
+      challenge: `${props.data.detourB!.challenge}`,
+      instruction: `${props.data.detourB!.instruction}`,
+      icon: `${props.data.detourB!.icon}`,
     },
   };
   return (
@@ -30,7 +61,7 @@ export const Detour = (props) => {
         }}
       />
       <div className='instruction'>
-        <div className='icon'>{props.data.intro?.icon}</div>
+        <div className='icon'>{detourText.intro?.icon}</div>
         <div
           className='direction'
           dangerouslySetInnerHTML={{
@@ -49,7 +80,7 @@ export const Detour = (props) => {
             }}
           />
           <div className='choice-instruction'>
-            <div className='icon'>{props.data.detourA?.icon}</div>
+            <div className='icon'>{detourText.detourA?.icon}</div>
             <div
               dangerouslySetInnerHTML={{
                 __html: `${detourText.detourA.instruction}`,
@@ -69,7 +100,7 @@ export const Detour = (props) => {
             }}
           />
           <div className='choice-instruction'>
-            <div className='icon'>{props.data.detourB?.icon}</div>
+            <div className='icon'>{detourText.detourB?.icon}</div>
             <div
               dangerouslySetInnerHTML={{
                 __html: `${detourText.detourB.instruction}`,
