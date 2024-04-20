@@ -173,7 +173,7 @@ export const RoleView = () => {
           </div>
         ) : (
           <div className='no-role'>
-            No Role selected. Pick a role from the sidebar.
+            No Role selected. Pick a Role from the sidebar.
           </div>
         )}
       </div>
