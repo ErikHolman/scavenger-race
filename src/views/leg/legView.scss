@@ -15,6 +15,29 @@
   & .opened-sidebar {
     flex-grow: 0.2;
     overflow-y: scroll;
+    & .list-of-legs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1em;
+      height: 75%;
+      overflow: scroll;
+      & .leg-buttons {
+        margin-bottom: 0.25em;
+        cursor: pointer;
+        border: 1px solid #333;
+        padding: 0.25em;
+        width: 100%;
+        &:hover {
+          background-color: aqua;
+        }
+        &.active {
+          color: red;
+          font-style: italic;
+          background-color: aquamarine;
+        }
+      }
+    }
   }
 
   & .content-legs {
@@ -32,6 +55,104 @@
       color: red;
       height: 100%;
       font-style: italic;
+    }
+
+    & .has-leg {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      & .left {
+        display: flex;
+        flex-direction: column;
+        height: 47em;
+        width: 50%;
+        margin-right: 2em;
+        & form {
+          display: flex;
+          flex-direction: column;
+          border-top: 1px solid #333333;
+          padding: 1em;
+          margin-top: 1em;
+          height: 100%;
+          & .form-item {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 0.5em;
+            margin-right: 0.5em;
+            & label {
+              display: flex;
+              width: 100%;
+              text-transform: uppercase;
+              font-weight: 600;
+            }
+            & input {
+              display: flex;
+              margin-top: 0.37em;
+              width: 98%;
+              padding: 0.5em;
+              &.picker {
+                height: 200px;
+              }
+            }
+          }
+          & .form-buttons {
+            display: flex;
+            align-items: flex-end;
+            height: 100%;
+            width: 100%;
+
+            & button:disabled {
+              background-color: grey !important;
+              color: white !important;
+              pointer-events: none;
+            }
+            & button#process_form {
+              color: white;
+              background-color: green;
+              border-color: white;
+              margin-left: 0.25em;
+              &:hover {
+                background-color: initial;
+                border-color: green;
+                color: initial;
+              }
+            }
+            & button#reset_form {
+              border-color: red;
+              background-color: unset;
+              &:hover {
+                background-color: red;
+                border-color: red;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+      & .right {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        & .preview-leg {
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+          border: 1px solid #333333;
+          margin: 0.5em;
+          padding: 0.5em;
+          height: 40em;
+          overflow: scroll;
+
+          & .card:hover {
+            scale: 1;
+          }
+
+          & > * {
+            font-size: 80%;
+          }
+        }
+      }
     }
   }
 }

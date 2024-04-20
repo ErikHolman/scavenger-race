@@ -16,7 +16,7 @@ $ npm run dev
 ---
 
 - [x] ~~Componitize Sidebar~~ - 4/11/24
-- [ ] Legs view
+- [x] ~~Legs view~~ - 4/20/24, with 'todos'
 - [ ] Tasks view
 - [ ] Authentication
 - [ ] Add DB
