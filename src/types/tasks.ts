@@ -1,7 +1,6 @@
-export enum Roles {
-    'detour',
-    'route',
-    'road',
-    'fast'
-  }
-  
+export enum Tasks {
+  'detour',
+  'fast',
+  'road',
+  'route',
+}
