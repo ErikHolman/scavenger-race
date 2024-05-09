@@ -7,8 +7,8 @@ import { UserView } from '../views/user/users.tsx';
 import { RaceAdmin } from '../views/admin/admin.tsx';
 import { RoleView } from '../views/role/roles.tsx';
 import { LegView } from '../views/leg/legView.tsx';
-import {TaskView} from '../views/task/taskView.tsx';
-
+import { TaskView } from '../views/task/taskView.tsx';
+import { SpectatorView } from '../views/spectator/spectatorView.tsx';
 
 export const router = createBrowserRouter([
   {
@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
       },
       { path: `users/new/`, element: <div>New user page</div> },
       // Task routes
-      { path: `tasks/`, element: <TaskView />},
+      { path: `tasks/`, element: <TaskView /> },
       { path: `tasks/:taskId/edit`, element: <div>Edit task page</div> },
       {
         path: `tasks/:taskId/delete/`,
@@ -53,7 +53,7 @@ export const router = createBrowserRouter([
     ],
   },
 
-  { path: `/race/spectator/`, element: <div>Spectator page</div> },
+  { path: `/race/spectator/`, element: <SpectatorView /> },
   {
     path: `/race/:racerId/:raceLocation`,
     element: (
