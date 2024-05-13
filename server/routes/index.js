@@ -1,8 +1,12 @@
-const express = require('express');
-const router = express.Router();
+import users from './user.js';
 
-router.get('/', (req, res) => {
-  res.send('hello world');
-});
+const defaultPageLoad = () => {
+  return 'howdy';
+};
 
-module.exports = router;
+const mountRoutes = (app) => {
+  app.use('/', defaultPageLoad);
+  app.use('/users', users);
+};
+
+export default mountRoutes;

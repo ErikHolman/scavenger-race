@@ -1,8 +1,9 @@
-const express = require('express');
-const app = express();
-const port = 3000;
+import express from 'express';
+import mountRoutes from './routes/index.js';
 
-const indexRouter = require('./routes/index');
+const app = express();
+
+const port = 3000;
 
 if (process.env.PORT === undefined) {
   app.listen(port, () => {
@@ -14,4 +15,4 @@ if (process.env.PORT === undefined) {
   });
 }
 
-app.use('/', indexRouter);
+mountRoutes(app);
