@@ -53,6 +53,7 @@ export const Login = () => {
               JOIN YOUR RACE
             </button>
             <Link to={`race/admin`}>Dev Skip Login</Link>
+            <Link to={`race/spectator`}>I am a Spectator</Link>
           </div>
         </form>
         <div className='login-issue'>{error}</div>

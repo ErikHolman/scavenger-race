@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { SpectatorTask } from '../../components/spectator/task';
 import './spectatorView.scss';
 
@@ -173,6 +174,11 @@ export const SpectatorView = () => {
             })}
           </tbody>
         </table>
+      </div>
+      <div className='spectator-footer'>
+        <Link className='link' to={`/`}>
+          Login
+        </Link>
       </div>
     </div>
   );
