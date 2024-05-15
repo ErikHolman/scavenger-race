@@ -1,0 +1,16 @@
+.popup-base {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  margin: 1em;
+  background-color: #f7f7f7;
+  border: 1px solid #fa4805;
+  border-radius: 1em;
+  box-shadow: 0em 0.3em rgba(0, 0, 0, 0.4);
+  & .popup-header {
+    display: flex;
+    text-transform: uppercase;
+    text-decoration: underline;
+    justify-content: center;
+  }
+}
