@@ -2,16 +2,37 @@
   {
     "legId": "1",
     "name": "a leg",
-    "tasks": ["101", "102", "103", "104", "105"]
+    "tasks": [
+      { "id": "101", "status": 2 },
+      { "id": "102", "status": 2 },
+      { "id": "103", "status": 0 },
+      { "id": "104", "status": 0 },
+      { "id": "105", "status": 0 }
+    ],
+    "status": 1
   },
   {
     "legId": "2",
     "name": "royal rumble",
-    "tasks": ["106", "107", "108", "109", "110"]
+    "tasks": [
+      { "id": "106", "status": 0 },
+      { "id": "107", "status": 0 },
+      { "id": "108", "status": 0 },
+      { "id": "109", "status": 0 },
+      { "id": "110", "status": 0 }
+    ],
+    "status": 0
   },
   {
     "legId": "3",
     "name": "finale",
-    "tasks": ["111", "112", "113", "114", "115"]
+    "tasks": [
+      { "id": "111", "status": 0 },
+      { "id": "112", "status": 0 },
+      { "id": "113", "status": 0 },
+      { "id": "114", "status": 0 },
+      { "id": "115", "status": 0 }
+    ],
+    "status": 0
   }
 ]
