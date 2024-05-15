@@ -9,6 +9,7 @@ import { RoleView } from '../views/role/roles.tsx';
 import { LegView } from '../views/leg/legView.tsx';
 import { TaskView } from '../views/task/taskView.tsx';
 import { SpectatorView } from '../views/spectator/spectatorView.tsx';
+import { RacerView } from '../views/racer/racer.tsx';
 
 export const router = createBrowserRouter([
   {
@@ -55,17 +56,7 @@ export const router = createBrowserRouter([
 
   { path: `/race/spectator/`, element: <SpectatorView /> },
   {
-    path: `/race/:racerId/:raceLocation`,
-    element: (
-      <div>
-        <div>Racer page</div>
-        <ul>
-          <li>Previous Task Link?</li>
-          <li>Current Task Content</li>
-          <li>Next Task Link - when unlocked</li>
-          <li>Current Leg Progress</li>
-        </ul>
-      </div>
-    ),
+    path: `/race/:racerId/`,
+    element: <RacerView />,
   },
 ]);

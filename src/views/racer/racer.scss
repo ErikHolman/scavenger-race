@@ -1,0 +1,117 @@
+.race-view {
+  background-color: #fabc05;
+  color: #2b2b2b;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  & .mobile-header,
+  .mobile-body,
+  .mobile-footer {
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  & .mobile-header,
+  .mobile-footer {
+    background-color: #2b2b2b;
+    color: #f7f7f7;
+  }
+
+  & .mobile-header {
+    max-height: 100px;
+    justify-self: flex-start;
+    flex-direction: row;
+    padding: 0.5em;
+    & .team-info {
+      display: flex;
+      align-self: center;
+      align-content: flex-start;
+      flex-grow: 2;
+      font-size: 20px;
+    }
+    & .status {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+      align-items: flex-end;
+      flex-direction: column;
+      & .leg-info {
+        display: flex;
+        font-size: x-small;
+        text-transform: uppercase;
+      }
+      & .task-info {
+        display: flex;
+        font-weight: 500;
+      }
+    }
+  }
+
+  & .mobile-body {
+    overflow: scroll;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+
+  & .mobile-footer {
+    justify-items: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
+
+    & .left,
+    .right,
+    .single-button {
+      display: flex;
+      max-height: 100px;
+      padding: 1em;
+      justify-content: space-around;
+      flex-grow: 0;
+    }
+
+    & .right,
+    .single-button {
+      flex-grow: 1;
+    }
+
+    & .mobile-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1em;
+      font-weight: bolder;
+      color: #2b2b2b;
+      min-width: 64px;
+      width: fit-content;
+      min-height: 48px;
+      max-height: 48px;
+      padding: 0 0.5em;
+      border: 2px solid transparent;
+      &.start {
+        background-color: #fabc05;
+      }
+      &.hint {
+        background-color: #fabc05;
+      }
+      &.hint:active {
+        color: #2b2b2b;
+        background-color: #fa7805;
+      }
+      &.solve,
+      &.next-task {
+        flex-grow: 1;
+        color: #f7f7f7;
+        background-color: #245739;
+      }
+      &.solve:active,
+      &.next-task:active {
+        color: #2b2b2b;
+        background-color: #47ae72;
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@ export const Footer = () => {
       <Link to={`/`} className='footer-buttons'>
         Logout
       </Link>
-      <Link to={`/race/:racerId/:raceLocation`} className='footer-buttons'>
+      <Link to={`/race/:racerId/`} className='footer-buttons'>
         Join the race!
       </Link>
       <Link to={`/race/spectator/`} className='footer-buttons'>
