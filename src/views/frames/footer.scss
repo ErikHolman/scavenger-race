@@ -1,20 +1,24 @@
+@import '../../theme/theme.scss';
+
 .footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #f6f6f6;
-  border-top: 4px solid #6f6f6f;
+  background-color: $lYellow;
+  border-top: 4px solid $dBrown;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   padding: 6px;
 
   & .footer-buttons {
-    color: #6f6f6f;
-    text-decoration: underline;
-
+    display: flex;
+    justify-content: center;
+    border-radius: 6px;
+    background-color: $dark;
+    color: $light;
+    width: 170px;
     &:hover {
-      color: blue;
-      text-decoration: line-through;
+      background-color: $dBlue;
     }
   }
 }

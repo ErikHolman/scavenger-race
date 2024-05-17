@@ -10,6 +10,8 @@
   height: 100svh;
   width: 100svw;
   background-color: #2b2b2b;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
 }
 
 #root .vert-spacer {

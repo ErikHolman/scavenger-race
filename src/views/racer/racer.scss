@@ -1,8 +1,8 @@
+@import '../../theme/theme.scss';
+
 .race-view {
-  background-color: #fabc05;
-  color: #2b2b2b;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  background-color: $lYellow;
+  color: $dark;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -18,8 +18,8 @@
 
   & .mobile-header,
   .mobile-footer {
-    background-color: #2b2b2b;
-    color: #f7f7f7;
+    background-color: $dark;
+    color: $light;
   }
 
   & .mobile-header {
@@ -56,6 +56,9 @@
     overflow: scroll;
     flex-grow: 1;
     flex-direction: column;
+    justify-content: center;
+    & .popup-base {
+    }
   }
 
   & .mobile-footer {
@@ -84,7 +87,7 @@
       align-items: center;
       border-radius: 1em;
       font-weight: bolder;
-      color: #2b2b2b;
+      color: $dark;
       min-width: 64px;
       width: fit-content;
       min-height: 48px;
@@ -92,25 +95,25 @@
       padding: 0 0.5em;
       border: 2px solid transparent;
       &.start {
-        background-color: #fabc05;
+        background-color: $lYellow;
       }
       &.hint {
-        background-color: #fabc05;
+        background-color: $lYellow;
       }
       &.hint:active {
-        color: #2b2b2b;
-        background-color: #fa7805;
+        color: $dark;
+        background-color: $dOrange;
       }
       &.solve,
       &.next-task {
         flex-grow: 1;
-        color: #f7f7f7;
-        background-color: #245739;
+        color: $light;
+        background-color: $dGreen;
       }
       &.solve:active,
       &.next-task:active {
-        color: #2b2b2b;
-        background-color: #47ae72;
+        color: $dark;
+        background-color: $lGreen;
       }
     }
   }

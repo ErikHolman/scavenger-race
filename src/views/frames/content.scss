@@ -1,6 +1,11 @@
+@import '../../theme/theme.scss';
+
 .content {
   overflow: hidden;
-
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center !important;
   & .view {
     overflow: hidden;
   }
@@ -13,13 +18,11 @@
     width: 60%;
     font-size: 1.5em;
     text-align: center;
-    background-color: darkblue;
+    background-color: $dBlue;
     padding: 10px;
     border-radius: 10px;
-    color: white;
-    border: 2px solid red;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-      'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-shadow: 0 2px black;
+    color: $light;
+    border: 2px solid $dOrange;
+    box-shadow: 1px 4px 10px rgba(43, 43, 43, 0.5);
   }
 }

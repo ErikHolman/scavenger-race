@@ -1,4 +1,5 @@
 import { Outlet, useLocation } from 'react-router-dom';
+import './content.scss';
 
 export const Content = () => {
   const activeRoute = useLocation();
