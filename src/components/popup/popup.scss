@@ -1,16 +1,69 @@
 .popup-base {
   display: flex;
   flex-direction: column;
+  height: fit-content;
+  justify-content: center;
+  max-height: 80%;
+  overflow: hidden;
   padding: 1em;
-  margin: 1em;
-  background-color: #f7f7f7;
-  border: 1px solid #fa4805;
-  border-radius: 1em;
+  background-color: #2b2b2b;
+  color: #f7f7f7;
   box-shadow: 0em 0.3em rgba(0, 0, 0, 0.4);
   & .popup-header {
     display: flex;
     text-transform: uppercase;
     text-decoration: underline;
     justify-content: center;
+    font-size: larger;
+    font-weight: 600;
+  }
+  & .popup-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    & div {
+      display: flex;
+    }
+  }
+  & .popup-footer {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    text-align: center;
+    width: 100%;
+    & .detour-buttons {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-around;
+      align-items: center;
+
+      & .icon {
+        display: flex;
+      }
+      & .detourA,
+      .detourB {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #fabc05;
+        color: #f7f7f7;
+        border-radius: 1em;
+        width: 100px;
+        min-height: 48px;
+        margin: 0.5em;
+        padding: 0.2em;
+        &:hover,
+        :active {
+          background-color: #fabc05;
+          color: #2b2b2b;
+        }
+
+        &:active {
+          border: 1px solid white;
+        }
+      }
+    }
   }
 }

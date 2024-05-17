@@ -59,6 +59,35 @@ export const RacerView = () => {
     }
   });
 
+  const sampleTask = {
+    taskId: '104',
+    name: 'DETOUR',
+    type: 'detour',
+    intro: {
+      challenge:
+        '<p>Along this trail you might have noticed plaques/signs that provide information on how Snohomish was founded. Use the information <strong>ALONG THE RIVER TRAIL</strong> to find the answers and get your next clue!</p>',
+      instruction:
+        '<p>Pick either <strong>ENGLISH & MATH</strong> or <strong>HISTORY</strong> and complete the task. You may switch tasks at any time.</p>',
+      icon: '🔀',
+    },
+    detourA: {
+      title: 'ENGLISH & MATH',
+      challenge:
+        "<p>Unscramble this word for a hint to find the right sign:</p><p><span style='display: flex; justify-content: center;'><strong>NKIP AMSLNO</strong></span></p><p>Add together the three years the Snohomish River froze over for several weeks.</p>",
+      instruction:
+        '<p>Text the <strong>ANSWER</strong> to your group’s text message conversation to get your next clue.</p>',
+      icon: '📱',
+    },
+    detourB: {
+      title: 'HISTORY',
+      challenge:
+        'In 1859 a cottage was delivered by steamship on the river. It was Snohomish’s first Post Office, Court House, and City Hall.',
+      instruction:
+        'Text the <strong>NAME OF THE COTTAGE</strong> to your gro in up’s text message conversation to get your next clue.',
+      icon: '📱',
+    },
+  };
+
   return (
     <div className='race-view'>
       <div className='mobile-header'>
@@ -75,21 +104,25 @@ export const RacerView = () => {
         </div>
       </div>
       <div className='mobile-body'>
-        {taskStatus == 0 && <Popup taskType='' taskTitle='' popBody='' />}
+        {taskStatus == 0 && <Popup task={sampleTask} />}
       </div>
       <div className='mobile-footer'>
         {taskStatus == 0 && (
           <div className='single-button'>
-            <div className='mobile-button start' role='button'>
-              :flag: START TASK :flag:
-            </div>
+            {sampleTask.type == 'detour' && (
+              <span className='mobile-button start' role='button'>
+                a thing
+              </span>
+            )}
           </div>
         )}
         {taskStatus != 0 && (
           <>
             <div className='left'>
               <div className='mobile-button hint' role='button'>
-                HELP
+                {sampleTask.type == 'detour' && (
+                  <span>{sampleTask.intro.icon}</span>
+                )}
               </div>
             </div>
             <div className='right'>

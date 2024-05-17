@@ -5,8 +5,8 @@
     "tasks": [
       { "id": "101", "status": 2 },
       { "id": "102", "status": 2 },
-      { "id": "103", "status": 0 },
-      { "id": "104", "status": 0 },
+      { "id": "103", "status": 2 },
+      { "id": "104", "status": 1 },
       { "id": "105", "status": 0 }
     ],
     "status": 1
