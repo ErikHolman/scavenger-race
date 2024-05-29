@@ -1,6 +1,6 @@
 # UPDATES
 
-### [MAY 23: Archive 'Alpha'](/_archive/05_23.zip)
+### [MAY 23, 2024: Archive 'Alpha'](/_archive/05_23.zip)
 
 'Alpha' helped drive out [db schema](/_notes/scavenger-db-05-23.png). Components from 'Alpha' may be repurposed in 'Beta'. 'Alpha' started in React and 'Beta' will remain a React project.
 
