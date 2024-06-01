@@ -1,4 +1,5 @@
 import user from './user.js';
+import task from './tasks.js';
 
 const mountRoutes = (app) => {
   app.get('/', async (req, res) => {
@@ -6,6 +7,7 @@ const mountRoutes = (app) => {
     res.send("*keyboard klacking sounds*... I'm in.");
   });
   app.use('/users', user);
+  app.use('/tasks', task);
 };
 
 export default mountRoutes;
