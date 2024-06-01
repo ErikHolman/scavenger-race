@@ -29,6 +29,29 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+// Add
+router.post('/new', async (req, res) => {
+  const newUser = req.body;
+  let message = '';
+
+  if (newUser.first_name == undefined || newUser.last_name == undefined) {
+    message = 'Username is malformed, no records added';
+    console.error(message);
+  }
+
+  try {
+    const createNewTask = await pool.query(
+      'INSERT INTO "Users" (first_name, last_name) VALUES ($1,$2)',
+      [newUser.first_name, newUser.last_name]
+    );
+    message = 'User created, 1 record added.';
+  } catch (error) {
+    console.error(error.message);
+  }
+
+  res.json(message);
+});
+
 // Update
 router.put('/:user_id', async (req, res) => {
   const { user_id } = req.params;

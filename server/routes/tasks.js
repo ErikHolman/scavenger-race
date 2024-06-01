@@ -46,7 +46,7 @@ router.post('/new', async (req, res) => {
 
   try {
     const createNewTask = await pool.query(
-      'INSERT INTO "Tasks" VALUES ($1,$2,$3,$4)',
+      'INSERT INTO "Tasks" (task_name, task_details, task_type, parent_leg) VALUES ($1,$2,$3,$4)',
       [
         newTask.task_name,
         newTask.task_details,
