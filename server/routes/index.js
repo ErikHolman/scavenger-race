@@ -1,12 +1,11 @@
-import users from './user.js';
-
-const defaultPageLoad = () => {
-  return 'howdy';
-};
+import user from './user.js';
 
 const mountRoutes = (app) => {
-  app.use('/', defaultPageLoad);
-  app.use('/users', users);
+  app.get('/', async (req, res) => {
+    console.log('no data here, but the request for "/" worked!');
+    res.send("*keyboard klacking sounds*... I'm in.");
+  });
+  app.use('/users', user);
 };
 
 export default mountRoutes;
