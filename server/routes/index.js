@@ -1,5 +1,6 @@
 import user from './user.js';
 import task from './tasks.js';
+import leg from './legs.js';
 
 const mountRoutes = (app) => {
   app.get('/', async (req, res) => {
@@ -8,6 +9,7 @@ const mountRoutes = (app) => {
   });
   app.use('/users', user);
   app.use('/tasks', task);
+  app.use('/legs', leg);
 };
 
 export default mountRoutes;
