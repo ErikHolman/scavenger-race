@@ -3,13 +3,15 @@ import Login from './views/login';
 import './App.css';
 import '@fontsource/inter';
 import './util/apiClient';
-import Tasks from './views/tasks';
+import { Button } from '@mui/joy';
 
 export default function App() {
   return (
     <CssVarsProvider>
       <Login />
-      <Tasks />
+      <Button component='a' href='/tasks'>
+        DEV SKIP LOGIN
+      </Button>
     </CssVarsProvider>
   );
 }
