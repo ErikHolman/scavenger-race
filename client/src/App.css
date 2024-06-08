@@ -4,3 +4,9 @@
   padding: 2rem;
   text-align: center;
 }
+
+.MuiContainer-root {
+  width: 100vw;
+  padding-left: 0;
+  padding-right: 0;
+}
