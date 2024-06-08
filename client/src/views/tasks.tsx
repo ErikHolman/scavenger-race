@@ -78,57 +78,59 @@ export default function Tasks() {
                   <td>
                     <Card variant='outlined' size='sm'>
                       <AccordionGroup size='sm'>
-                        <Accordion>
-                          <AccordionSummary>ICON</AccordionSummary>
-                          <AccordionDetails>
-                            {task.task_details.icon == undefined ? (
-                              <p>No Icon</p>
-                            ) : (
-                              <span
+                        {task.task_details.icon != undefined && (
+                          <Accordion>
+                            <AccordionSummary variant='outlined'>
+                              ICON
+                            </AccordionSummary>
+                            <AccordionDetails variant='soft'>
+                              <p
                                 dangerouslySetInnerHTML={{
                                   __html: `${task.task_details.icon}`,
                                 }}
                               />
-                            )}
-                          </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                          <AccordionSummary>QUESTION</AccordionSummary>
-                          <AccordionDetails>
-                            {task.task_details.question == undefined ? (
-                              <p>No Question</p>
-                            ) : (
+                            </AccordionDetails>
+                          </Accordion>
+                        )}
+                        {task.task_details.question != undefined && (
+                          <Accordion>
+                            <AccordionSummary variant='outlined'>
+                              QUESTION
+                            </AccordionSummary>
+                            <AccordionDetails variant='soft'>
                               <span
                                 dangerouslySetInnerHTML={{
                                   __html: `${task.task_details.question}`,
                                 }}
                               />
-                            )}
-                          </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                          <AccordionSummary>INSTRUCTION</AccordionSummary>
-                          <AccordionDetails>
-                            {task.task_details.instruction == undefined ? (
-                              <p>No Instruction</p>
-                            ) : (
+                            </AccordionDetails>
+                          </Accordion>
+                        )}
+                        {task.task_details.instruction != undefined && (
+                          <Accordion>
+                            <AccordionSummary variant='outlined'>
+                              INSTRUCTION
+                            </AccordionSummary>
+                            <AccordionDetails variant='soft'>
                               <span
                                 dangerouslySetInnerHTML={{
                                   __html: `${task.task_details.instruction}`,
                                 }}
                               />
-                            )}
-                          </AccordionDetails>
-                        </Accordion>
-                        <Accordion>
-                          <AccordionSummary>DETOUR INFO</AccordionSummary>
-                          <AccordionDetails>
-                            {task.task_details.routeA == undefined ? (
-                              <p>Not a Detour</p>
-                            ) : (
+                            </AccordionDetails>
+                          </Accordion>
+                        )}
+                        {task.task_details.routeA != undefined && (
+                          <Accordion>
+                            <AccordionSummary variant='outlined'>
+                              DETOUR INFO
+                            </AccordionSummary>
+                            <AccordionDetails variant='soft'>
                               <Sheet
+                                variant='soft'
                                 sx={{
-                                  mx: 'auto', // margin left & right
+                                  my: 2, // margin top & bottom
+                                  mx: '2', // margin left & right
                                   display: 'flex',
                                   flexDirection: 'row',
                                   gap: 2,
@@ -137,7 +139,7 @@ export default function Tasks() {
                                 <Card
                                   sx={{ display: 'flex', width: '50%' }}
                                   size='sm'
-                                  variant='solid'
+                                  variant='outlined'
                                 >
                                   <b>
                                     {task.task_details.routeA.icon}
@@ -157,7 +159,7 @@ export default function Tasks() {
                                 <Card
                                   sx={{ display: 'flex', width: '50%' }}
                                   size='sm'
-                                  variant='solid'
+                                  variant='outlined'
                                 >
                                   <b>
                                     {task.task_details.routeB.icon}
@@ -175,9 +177,9 @@ export default function Tasks() {
                                   />
                                 </Card>
                               </Sheet>
-                            )}
-                          </AccordionDetails>
-                        </Accordion>
+                            </AccordionDetails>
+                          </Accordion>
+                        )}
                       </AccordionGroup>
                     </Card>
                   </td>
