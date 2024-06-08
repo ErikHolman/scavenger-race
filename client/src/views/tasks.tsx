@@ -1,6 +1,16 @@
 import { useState, useEffect } from 'react';
 import { _get } from '../util/apiClient';
-import { Card } from '@mui/joy';
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionGroup,
+  AccordionSummary,
+  Card,
+  Sheet,
+  Table,
+} from '@mui/joy';
+import { Link } from 'react-router-dom';
+import getTaskType from '../types/TaskType';
 
 export default function Tasks() {
   const [tasks, setTasks] = useState([]);
@@ -21,9 +31,8 @@ export default function Tasks() {
 
   return (
     <>
-      <Card
+      <Sheet
         sx={{
-          width: 300,
           mx: 'auto', // margin left & right
           my: 4, // margin top & bottom
           py: 3, // padding top & bottom
@@ -35,14 +44,154 @@ export default function Tasks() {
           boxShadow: 'md',
         }}
       >
-        {tasks.length == 0 && <span>0 tasks found.</span>}
-        {tasks.length > 0 && <span>{tasks.length} tasks found</span>}
-        <div>
-          {tasks.map((task) => {
-            return <li key={task.task_id}>{task.task_name}</li>;
-          })}
-        </div>
-      </Card>
+        <Table
+          variant='plain'
+          stickyHeader
+          stripe='odd'
+          hoverRow
+          borderAxis='x'
+          sx={{
+            textAlign: 'left',
+            '& thead th:nth-of-type(1)': { width: '15%' },
+            '& thead th:nth-of-type(2)': { width: '10%' },
+            '& thead th:nth-of-type(4)': { width: '10%' },
+            captionSide: 'bottom',
+          }}
+        >
+          <caption>{tasks.length} TASKS FOUND</caption>
+          <thead>
+            <tr>
+              <th>Task Name</th>
+              <th>Task Type</th>
+              <th>Task Details</th>
+              <th>Parent Leg</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tasks.map((task) => {
+              return (
+                <tr key={task.task_id}>
+                  <td>
+                    <Link to={`${task.task_id}`}>{task.task_name}</Link>
+                  </td>
+                  <td>{getTaskType(`${task.task_type}`)}</td>
+                  <td>
+                    <Card variant='outlined' size='sm'>
+                      <AccordionGroup size='sm'>
+                        <Accordion>
+                          <AccordionSummary>ICON</AccordionSummary>
+                          <AccordionDetails>
+                            {task.task_details.icon == undefined ? (
+                              <p>No Icon</p>
+                            ) : (
+                              <span
+                                dangerouslySetInnerHTML={{
+                                  __html: `${task.task_details.icon}`,
+                                }}
+                              />
+                            )}
+                          </AccordionDetails>
+                        </Accordion>
+                        <Accordion>
+                          <AccordionSummary>QUESTION</AccordionSummary>
+                          <AccordionDetails>
+                            {task.task_details.question == undefined ? (
+                              <p>No Question</p>
+                            ) : (
+                              <span
+                                dangerouslySetInnerHTML={{
+                                  __html: `${task.task_details.question}`,
+                                }}
+                              />
+                            )}
+                          </AccordionDetails>
+                        </Accordion>
+                        <Accordion>
+                          <AccordionSummary>INSTRUCTION</AccordionSummary>
+                          <AccordionDetails>
+                            {task.task_details.instruction == undefined ? (
+                              <p>No Instruction</p>
+                            ) : (
+                              <span
+                                dangerouslySetInnerHTML={{
+                                  __html: `${task.task_details.instruction}`,
+                                }}
+                              />
+                            )}
+                          </AccordionDetails>
+                        </Accordion>
+                        <Accordion>
+                          <AccordionSummary>DETOUR INFO</AccordionSummary>
+                          <AccordionDetails>
+                            {task.task_details.routeA == undefined ? (
+                              <p>Not a Detour</p>
+                            ) : (
+                              <Sheet
+                                sx={{
+                                  mx: 'auto', // margin left & right
+                                  display: 'flex',
+                                  flexDirection: 'row',
+                                  gap: 2,
+                                }}
+                              >
+                                <Card
+                                  sx={{ display: 'flex', width: '50%' }}
+                                  size='sm'
+                                  variant='solid'
+                                >
+                                  <b>
+                                    {task.task_details.routeA.icon}
+                                    {task.task_details.routeA.name}
+                                  </b>
+                                  <span
+                                    dangerouslySetInnerHTML={{
+                                      __html: `${task.task_details.routeA.question}`,
+                                    }}
+                                  />
+                                  <span
+                                    dangerouslySetInnerHTML={{
+                                      __html: `${task.task_details.routeA.instruction}`,
+                                    }}
+                                  />
+                                </Card>
+                                <Card
+                                  sx={{ display: 'flex', width: '50%' }}
+                                  size='sm'
+                                  variant='solid'
+                                >
+                                  <b>
+                                    {task.task_details.routeB.icon}
+                                    {task.task_details.routeB.name}
+                                  </b>
+                                  <span
+                                    dangerouslySetInnerHTML={{
+                                      __html: `${task.task_details.routeB.question}`,
+                                    }}
+                                  />
+                                  <span
+                                    dangerouslySetInnerHTML={{
+                                      __html: `${task.task_details.routeB.instruction}`,
+                                    }}
+                                  />
+                                </Card>
+                              </Sheet>
+                            )}
+                          </AccordionDetails>
+                        </Accordion>
+                      </AccordionGroup>
+                    </Card>
+                  </td>
+                  <td>
+                    <Link to={`/legs/${task.parent_leg}`}>
+                      {task.parent_leg}
+                    </Link>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+      </Sheet>
       {error.length > 0 && (
         <Card
           sx={{
