@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { _get } from '../util/apiClient';
-import { Card } from '@mui/joy';
+import { Card, Sheet, Table } from '@mui/joy';
+import { Link } from 'react-router-dom';
 
 export default function Legs() {
   const [legs, setlegs] = useState([]);
@@ -21,9 +22,8 @@ export default function Legs() {
 
   return (
     <>
-      <Card
+      <Sheet
         sx={{
-          width: 300,
           mx: 'auto', // margin left & right
           my: 4, // margin top & bottom
           py: 3, // padding top & bottom
@@ -35,34 +35,61 @@ export default function Legs() {
           boxShadow: 'md',
         }}
       >
-        {legs.length == 0 && <span>0 legs found.</span>}
-        {legs.length > 0 && <span>{legs.length} legs found</span>}
-        <div>
-          {legs.map((leg) => {
-            return <li key={leg.leg_id}>{leg.leg_name}</li>;
-          })}
-        </div>
-      </Card>
-      {error.length > 0 && (
-        <Card
+        <Table
+          variant='plain'
+          stickyHeader
+          stripe='odd'
+          hoverRow
+          noWrap
+          borderAxis='xBetween'
           sx={{
-            width: 300,
-            mx: 'auto', // margin left & right
-            my: 4, // margin top & bottom
-            py: 3, // padding top & bottom
-            px: 2, // padding left & right
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 2,
-            borderRadius: 'sm',
-            boxShadow: 'md',
-            color: '#ffffff',
-            backgroundColor: 'red',
+            textAlign: 'left',
+            '& thead th:nth-of-type(1)': { width: '30%' },
+            captionSide: 'bottom',
           }}
         >
-          {<span>{error}</span>}
-        </Card>
-      )}
+          <caption>{legs.length} LEGS FOUND</caption>
+          <thead>
+            <tr>
+              <th>Leg Name</th>
+              <th>Leg Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            {legs.map((leg) => {
+              return (
+                <tr key={leg.leg_id}>
+                  <td>
+                    <Link to={`${leg.leg_id}`}>{leg.leg_name}</Link>
+                  </td>
+
+                  <td>{JSON.stringify(leg.leg_details)}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+        {error.length > 0 && (
+          <Card
+            sx={{
+              width: 300,
+              mx: 'auto', // margin left & right
+              my: 4, // margin top & bottom
+              py: 3, // padding top & bottom
+              px: 2, // padding left & right
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 2,
+              borderRadius: 'sm',
+              boxShadow: 'md',
+              color: '#ffffff',
+              backgroundColor: 'red',
+            }}
+          >
+            {<span>{error}</span>}
+          </Card>
+        )}
+      </Sheet>
     </>
   );
 }
