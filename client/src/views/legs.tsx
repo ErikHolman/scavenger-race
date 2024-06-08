@@ -41,7 +41,7 @@ export default function Legs() {
           stripe='odd'
           hoverRow
           noWrap
-          borderAxis='xBetween'
+          borderAxis='x'
           sx={{
             textAlign: 'left',
             '& thead th:nth-of-type(1)': { width: '30%' },
@@ -62,7 +62,6 @@ export default function Legs() {
                   <td>
                     <Link to={`${leg.leg_id}`}>{leg.leg_name}</Link>
                   </td>
-
                   <td>{JSON.stringify(leg.leg_details)}</td>
                 </tr>
               );
