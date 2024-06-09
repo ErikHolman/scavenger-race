@@ -77,6 +77,11 @@ export default function Tasks() {
                   <td>{getTaskType(`${task.task_type}`)}</td>
                   <td>
                     <Card variant='outlined' size='sm'>
+                      {task.task_details.instruction == undefined && (
+                        <p>
+                          Task details are missing, task is likely malformed.
+                        </p>
+                      )}
                       <AccordionGroup size='sm'>
                         {task.task_details.icon != undefined && (
                           <Accordion>
